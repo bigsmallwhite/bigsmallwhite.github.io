@@ -2,6 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://bigsmallwhite.io/about/</loc><lastmod>2020-08-04T14:44:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://bigsmallwhite.io/categories/</loc><lastmod>2020-08-03T10:42:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://bigsmallwhite.io/</loc><lastmod>2020-08-03T10:42:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://bigsmallwhite.io/posts/</loc><lastmod>2020-08-03T10:42:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
@@ -10,7 +11,6 @@
             <loc>https://bigsmallwhite.io/categories/%E5%AD%A6%E4%B9%A0/</loc><lastmod>2020-08-03T10:42:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://bigsmallwhite.io/tags/%E7%AE%97%E6%B3%95/</loc><lastmod>2020-08-03T10:42:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://bigsmallwhite.io/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</loc><lastmod>2020-08-03T10:42:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://bigsmallwhite.io/about/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://bigsmallwhite.io/tags/content/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://bigsmallwhite.io/tags/installation/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://bigsmallwhite.io/categories/logs/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
