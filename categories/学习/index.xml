@@ -4,12 +4,23 @@
         <link>https://bigsmallwhite.io/categories/%E5%AD%A6%E4%B9%A0/</link>
         <description>学习 - 分类 - LoveY Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2904158746@qq.com (dll)</managingEditor>
-            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 03 Aug 2020 10:42:22 &#43;0800</lastBuildDate><atom:link href="https://bigsmallwhite.io/categories/%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
-    <title>算法学习</title>
-    <link>https://bigsmallwhite.io/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</link>
+            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 05 Aug 2020 09:43:56 &#43;0800</lastBuildDate><atom:link href="https://bigsmallwhite.io/categories/%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+    <title>经典排序算法</title>
+    <link>https://bigsmallwhite.io/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</link>
+    <pubDate>Wed, 05 Aug 2020 09:43:56 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://bigsmallwhite.io/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/featured-image.jpg" referrerpolicy="no-referrer">
+            </div>经典十大排序算法的Python实现……]]></description>
+</item><item>
+    <title>算法学习一</title>
+    <link>https://bigsmallwhite.io/%E8%8F%9C%E9%B8%9F%E5%AE%9E%E4%BE%8B/</link>
     <pubDate>Mon, 03 Aug 2020 10:42:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://bigsmallwhite.io/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</guid>
-    <description><![CDATA[]]></description>
+    <guid>https://bigsmallwhite.io/%E8%8F%9C%E9%B8%9F%E5%AE%9E%E4%BE%8B/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/featured-image.jpg" referrerpolicy="no-referrer">
+            </div>个人的一些算法学习记录和总结……]]></description>
 </item></channel>
 </rss>

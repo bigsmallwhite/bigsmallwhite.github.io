@@ -5,7 +5,7 @@
 
 # **好好学习，天天向上**
 
-{{< admonition abstract>}}这是一个关于个人的**学习记录**和**生活日常**的博客小站~!{{< /admonition >}}
+{{< admonition abstract>}}{{< typeit >}}这是一个关于个人的**学习记录**和**生活日常**的博客小站~!{{< /typeit >}}{{< /admonition >}}
 
 ![about](index.zh-cn.assets/about-1596524595755.jpg)
 
