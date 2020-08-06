@@ -4,7 +4,16 @@
         <link>https://bigsmallwhite.io/posts/</link>
         <description>所有文章 | LoveY Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2904158746@qq.com (dll)</managingEditor>
-            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 05 Aug 2020 09:43:56 &#43;0800</lastBuildDate><atom:link href="https://bigsmallwhite.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 06 Aug 2020 14:01:50 &#43;0800</lastBuildDate><atom:link href="https://bigsmallwhite.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>SQL学习</title>
+    <link>https://bigsmallwhite.io/sql/</link>
+    <pubDate>Thu, 06 Aug 2020 14:01:50 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://bigsmallwhite.io/sql/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/featured-image.png" referrerpolicy="no-referrer">
+            </div>SQL的学习笔记……]]></description>
+</item><item>
     <title>经典排序算法</title>
     <link>https://bigsmallwhite.io/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</link>
     <pubDate>Wed, 05 Aug 2020 09:43:56 &#43;0800</pubDate>

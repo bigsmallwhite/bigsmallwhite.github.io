@@ -2,12 +2,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://bigsmallwhite.io/categories/</loc><lastmod>2020-08-05T09:43:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://bigsmallwhite.io/</loc><lastmod>2020-08-05T09:43:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://bigsmallwhite.io/posts/</loc><lastmod>2020-08-05T09:43:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://bigsmallwhite.io/categories/</loc><lastmod>2020-08-06T14:01:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://bigsmallwhite.io/</loc><lastmod>2020-08-06T14:01:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://bigsmallwhite.io/posts/</loc><lastmod>2020-08-06T14:01:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://bigsmallwhite.io/tags/sql/</loc><lastmod>2020-08-06T14:01:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://bigsmallwhite.io/sql/</loc><lastmod>2020-08-06T14:01:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://bigsmallwhite.io/tags/</loc><lastmod>2020-08-06T14:01:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://bigsmallwhite.io/categories/%E5%AD%A6%E4%B9%A0/</loc><lastmod>2020-08-06T14:01:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://bigsmallwhite.io/tags/python/</loc><lastmod>2020-08-05T09:43:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://bigsmallwhite.io/tags/</loc><lastmod>2020-08-05T09:43:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://bigsmallwhite.io/categories/%E5%AD%A6%E4%B9%A0/</loc><lastmod>2020-08-05T09:43:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://bigsmallwhite.io/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc><lastmod>2020-08-05T09:43:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://bigsmallwhite.io/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc><lastmod>2020-08-05T09:43:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://bigsmallwhite.io/categories/logs/</loc><lastmod>2020-08-04T21:41:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
