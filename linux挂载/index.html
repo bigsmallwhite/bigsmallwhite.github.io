@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Linux挂载 - LoveY Blog</title><meta name="Description" content="Linux挂载的解释……"><meta property="og:title" content="Linux挂载" />
+<meta property="og:description" content="Linux挂载的解释……" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bigsmallwhite.io/linux%E6%8C%82%E8%BD%BD/" />
+<meta property="og:image" content="https://bigsmallwhite.io/linux%E6%8C%82%E8%BD%BD/featured-image.jpg"/>
+<meta property="article:published_time" content="2020-08-08T10:59:55+08:00" />
+<meta property="article:modified_time" content="2020-08-08T10:59:55+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://bigsmallwhite.io/linux%E6%8C%82%E8%BD%BD/featured-image.jpg"/>
+<meta name="twitter:title" content="Linux挂载"/>
+<meta name="twitter:description" content="Linux挂载的解释……"/>
+<meta name="application-name" content="LoveY">
+<meta name="apple-mobile-web-app-title" content="LoveY"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bigsmallwhite.io/linux%E6%8C%82%E8%BD%BD/" /><link rel="prev" href="https://bigsmallwhite.io/sql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Linux挂载",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/bigsmallwhite.io\/linux%E6%8C%82%E8%BD%BD\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/bigsmallwhite.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "Linux","wordcount":  1161 ,
+        "url": "https:\/\/bigsmallwhite.io\/linux%E6%8C%82%E8%BD%BD\/","datePublished": "2020-08-08T10:59:55+08:00","dateModified": "2020-08-08T10:59:55+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/bigsmallwhite.io\/images\/avatar.png",
+                    "width":  959 ,
+                    "height":  959 
+                }},"author": {
+                "@type": "Person",
+                "name": "Dll"
+            },"description": "Linux挂载的解释……"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="LoveY Blog">LoveY<span class="header-title-post"><i class='far fa-kiss-wink-heart fa-fw'></i></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/" title="所有文章"> 所有文章 </a><a class="menu-item" href="/tags/" title="文章标签"> 标签 </a><a class="menu-item" href="/categories/" title="文章分类"> 分类 </a><a class="menu-item" href="/categories/logs/" title="所有日志"> 日志 </a><a class="menu-item" href="/about/" title="关于博客"> 关于 </a><a class="menu-item" href="https://github.com/bigsmallwhite/bigsmallwhite.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="LoveY Blog">LoveY<span class="header-title-post"><i class='far fa-kiss-wink-heart fa-fw'></i></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="所有文章">所有文章</a><a class="menu-item" href="/tags/" title="文章标签">标签</a><a class="menu-item" href="/categories/" title="文章分类">分类</a><a class="menu-item" href="/categories/logs/" title="所有日志">日志</a><a class="menu-item" href="/about/" title="关于博客">关于</a><a class="menu-item" href="https://github.com/bigsmallwhite/bigsmallwhite.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Linux挂载</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Dll</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>学习</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-08">2020-08-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1161 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/linux%E6%8C%82%E8%BD%BD/" class="leancloud_visitors" data-flag-title="Linux挂载">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="featured-image.jpg"
+        data-srcset="/linux%E6%8C%82%E8%BD%BD/featured-image.jpg, featured-image.jpg 1.5x, /linux%E6%8C%82%E8%BD%BD/featured-image.jpg 2x"
+        data-sizes="auto"
+        alt="/linux%E6%8C%82%E8%BD%BD/featured-image.jpg"
+        title="Linux挂载的解释……" /></div><div class="content" id="content"><div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>信息<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>名词解释：</p>
+<p>挂载，指的就是将设备文件中的顶级目录连接到 Linux 根目录下的某一目录（最好是空目录），访问此目录就等同于访问设备文件。</p>
+</div>
+        </div>
+    </div>
+<blockquote>
+<p>Linux 系统中“一切皆文件”，所有文件都放置在以根目录为树根的树形目录结构中，输入 <code>tree /</code>即可查看</p>
+</blockquote>
+<ul>
+<li>在 Linux 看来，任何硬件设备也都是文件，它们各有自己的一套文件系统（文件目录结构）</li>
+<li>当在 Linux 系统中使用这些硬件设备时，只有将Linux本身的文件目录与硬件设备的文件目录合二为一，硬件设备才能为linux所用。<strong>合二为一的过程称为“挂载”。</strong></li>
+</ul>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Windows下，<code>mount</code>挂载，就是给磁盘分区提供一个盘符（<code>C,D,E,...</code>）。比如插入U盘后，系统自动分配<code>I</code>或<code>E</code>或者其他的盘符，盘符其实就是挂载，退优盘的时候进行安全弹出，其实就是卸载：<code>unmount</code>。</div>
+        </div>
+    </div>
+<div class="details admonition question open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-question-circle fa-fw"></i>问题<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>Linux下，不像Windows可以有<code>C,D,E</code>多个目录，Linux只有一个根目录<code>/</code>。在装系统时，分配给linux的所有区都在<code>/</code>下的某个位置，比如<code>/home</code>等等。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="index.zh-cn.assets/1596875818609.png"
+        data-srcset="/linux%E6%8C%82%E8%BD%BD/index.zh-cn.assets/1596875818609.png, index.zh-cn.assets/1596875818609.png 1.5x, /linux%E6%8C%82%E8%BD%BD/index.zh-cn.assets/1596875818609.png 2x"
+        data-sizes="auto"
+        alt="/linux%E6%8C%82%E8%BD%BD/index.zh-cn.assets/1596875818609.png"
+        title="1596875818609" /></p>
+</div>
+        </div>
+    </div>
+<p>具体挂载的过程看下面的例子</p>
+<div class="details admonition example open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ol fa-fw"></i>示例<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>以插入硬盘为例，假如插入了新硬盘，分了新磁盘区<code>sdb1</code>。它现在还不属于<code>/</code>，如图所示：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="index.zh-cn.assets/2-1Z321130921V9.gif"
+        data-srcset="/linux%E6%8C%82%E8%BD%BD/index.zh-cn.assets/2-1Z321130921V9.gif, index.zh-cn.assets/2-1Z321130921V9.gif 1.5x, /linux%E6%8C%82%E8%BD%BD/index.zh-cn.assets/2-1Z321130921V9.gif 2x"
+        data-sizes="auto"
+        alt="/linux%E6%8C%82%E8%BD%BD/index.zh-cn.assets/2-1Z321130921V9.gif"
+        title="2-1Z321130921V9" /></p>
+<ul>
+<li>目前 U 盘和 Linux 系统文件分属两个文件系统，还无法使用命令行找到 U 盘文件，需要将两个文件系统进行挂载。</li>
+<li>虽然可以在一些Linux图形桌面系统里找到位置，浏览管理里面的文件，但在命令行却不知道怎么访问，比如无法使用<code>cd</code>或者<code>ls</code>。更无法在编程时指定一个目录对其操作。</li>
+</ul>
+<p>接下来，我们在根目录下新建一个目录 <code>/sdb-u</code>，通过挂载命令将 U 盘文件系统挂载到此目录，如图所示：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="index.zh-cn.assets/2-1Z321130I44B.gif"
+        data-srcset="/linux%E6%8C%82%E8%BD%BD/index.zh-cn.assets/2-1Z321130I44B.gif, index.zh-cn.assets/2-1Z321130I44B.gif 1.5x, /linux%E6%8C%82%E8%BD%BD/index.zh-cn.assets/2-1Z321130I44B.gif 2x"
+        data-sizes="auto"
+        alt="/linux%E6%8C%82%E8%BD%BD/index.zh-cn.assets/2-1Z321130I44B.gif"
+        title="2-1Z321130I44B" /></p>
+<ul>
+<li>挂载命令：<code>mount /sdb1 /sdb-u</code></li>
+<li>把U盘的区<code>sdb1</code>挂载到Linux根目录的<code>/sdb-u</code>文件夹下，之后访问这个<code>/sdb-u</code>文件夹就相当于访问这个U盘了。对<code>/sdb-u</code>的任何操作，都相当于对U盘里文件的操作。</li>
+</ul>
+</div>
+        </div>
+    </div>
+<p><strong>所以直白讲，Linux下，mount挂载的作用，就是将一个设备（通常是存储设备）挂接到一个已存在的目录上，访问这个目录就是访问该存储设备。</strong></p>
+<ol>
+<li>linux操作系统将所有的设备都看作文件，它将整个计算机的资源都整合成一个大的文件目录。</li>
+<li>要访问存储设备中的文件，必须将文件所在的分区挂载到一个已存在的目录上，然后通过访问这个目录来访问存储设备。</li>
+<li>挂载就是把设备放在一个目录下，让系统知道怎么管理这个设备里的文件，了解这个存储设备的可读写特性之类的过程。</li>
+</ol>
+<div class="details admonition question open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-question-circle fa-fw"></i>问题<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><strong>插入U盘后不是自动分盘到<code>/sdb1</code> 吗，直接对它操作不就行了？这不是它的目录吗？</strong></div>
+        </div>
+    </div>
+<p><code>/sdb1</code>不是目录。可以发现<code>ls /sdb1</code>无法执行。<code>/sdb1</code>是一个类似指针的东西，指向这个分区的原始数据块。mount前，系统并不知道这个数据块哪部分数据代表文件，也不知道如何对它们操作。</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>技巧<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">插入CD，系统其实自动执行了 <code>mount /dev/cdrom /media/cdrom</code>。所以可以直接在系统的<code>/media/cdrom</code>中对CD中的内容进行管理。</div>
+        </div>
+    </div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-08-08</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://bigsmallwhite.io/linux%E6%8C%82%E8%BD%BD/" data-title="Linux挂载" data-hashtags="Linux"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://bigsmallwhite.io/linux%E6%8C%82%E8%BD%BD/" data-hashtag="Linux"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://bigsmallwhite.io/linux%E6%8C%82%E8%BD%BD/" data-title="Linux挂载"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://bigsmallwhite.io/linux%E6%8C%82%E8%BD%BD/" data-title="Linux挂载"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://bigsmallwhite.io/linux%E6%8C%82%E8%BD%BD/" data-title="Linux挂载" data-image="featured-image.jpg"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux/">Linux</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/sql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/" class="prev" rel="prev" title="SQL学习"><i class="fas fa-angle-left fa-fw"></i>SQL学习</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">dll</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":15},"comment":{"valine":{"appId":"HkjwjqbvBuR9wDB5nCMVD4xL-gzGzoHsz","appKey":"Vz2O6Q0k6kQdfaulv7whvyF9","avatar":"wavatar","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论……","recordIP":true,"visitor":true}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

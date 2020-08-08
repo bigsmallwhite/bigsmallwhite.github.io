@@ -30,4 +30,4 @@
 
 当然了，博客的作用当然不仅仅是分享笔记，生活常事、所见所闻、学习记录、心中所感这些都可以分享，分享是一件快乐的事……:hugs:
 
-
+{{< music url="/music/how long.mp3" name=how-long artist=charlie-puth cover="/images/how long.jpg" >}}
