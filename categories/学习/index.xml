@@ -4,7 +4,14 @@
         <link>https://bigsmallwhite.io/categories/%E5%AD%A6%E4%B9%A0/</link>
         <description>学习 - 分类 - LoveY Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2904158746@qq.com (dll)</managingEditor>
-            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 09 Aug 2020 18:39:31 &#43;0800</lastBuildDate><atom:link href="https://bigsmallwhite.io/categories/%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 10 Aug 2020 22:34:26 &#43;0800</lastBuildDate><atom:link href="https://bigsmallwhite.io/categories/%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+    <title>集合所有子集</title>
+    <link>https://bigsmallwhite.io/leetcode/</link>
+    <pubDate>Mon, 10 Aug 2020 22:34:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://bigsmallwhite.io/leetcode/</guid>
+    <description><![CDATA[Python输出集合的所有子集……]]></description>
+</item><item>
     <title>Python位运算</title>
     <link>https://bigsmallwhite.io/python%E4%BD%8D%E8%BF%90%E7%AE%97/</link>
     <pubDate>Sun, 09 Aug 2020 18:39:31 &#43;0800</pubDate>
