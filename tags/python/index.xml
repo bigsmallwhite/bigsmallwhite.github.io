@@ -1,61 +1,61 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Python - 标签 - LoveY Blog</title>
-        <link>https://dllyy.netlify.app/tags/python/</link>
+        <link>https://bigsmallwhite.github.io/tags/python/</link>
         <description>Python - 标签 - LoveY Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2904158746@qq.com (dll)</managingEditor>
-            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 12 Aug 2020 23:57:20 &#43;0800</lastBuildDate><atom:link href="https://dllyy.netlify.app/tags/python/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 12 Aug 2020 23:57:20 &#43;0800</lastBuildDate><atom:link href="https://bigsmallwhite.github.io/tags/python/" rel="self" type="application/rss+xml" /><item>
     <title>查找数组中重复的数字</title>
-    <link>https://dllyy.netlify.app/%E5%89%91%E6%8C%87offer-03%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</link>
+    <link>https://bigsmallwhite.github.io/%E5%89%91%E6%8C%87offer-03%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</link>
     <pubDate>Wed, 12 Aug 2020 23:57:20 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://dllyy.netlify.app/%E5%89%91%E6%8C%87offer-03%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</guid>
+    <guid>https://bigsmallwhite.github.io/%E5%89%91%E6%8C%87offer-03%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</guid>
     <description><![CDATA[Python实现查找数组中重复的数字……]]></description>
 </item><item>
     <title>合并有序链表</title>
-    <link>https://dllyy.netlify.app/%E5%90%88%E5%B9%B6%E9%93%BE%E8%A1%A8/</link>
+    <link>https://bigsmallwhite.github.io/%E5%90%88%E5%B9%B6%E9%93%BE%E8%A1%A8/</link>
     <pubDate>Tue, 11 Aug 2020 19:10:55 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://dllyy.netlify.app/%E5%90%88%E5%B9%B6%E9%93%BE%E8%A1%A8/</guid>
+    <guid>https://bigsmallwhite.github.io/%E5%90%88%E5%B9%B6%E9%93%BE%E8%A1%A8/</guid>
     <description><![CDATA[Python实现合并有序链表……]]></description>
 </item><item>
     <title>集合所有子集</title>
-    <link>https://dllyy.netlify.app/%E9%9B%86%E5%90%88%E5%AD%90%E9%9B%86/</link>
+    <link>https://bigsmallwhite.github.io/%E9%9B%86%E5%90%88%E5%AD%90%E9%9B%86/</link>
     <pubDate>Mon, 10 Aug 2020 22:34:26 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://dllyy.netlify.app/%E9%9B%86%E5%90%88%E5%AD%90%E9%9B%86/</guid>
+    <guid>https://bigsmallwhite.github.io/%E9%9B%86%E5%90%88%E5%AD%90%E9%9B%86/</guid>
     <description><![CDATA[Python输出集合的所有子集……]]></description>
 </item><item>
     <title>Python位运算</title>
-    <link>https://dllyy.netlify.app/python%E4%BD%8D%E8%BF%90%E7%AE%97/</link>
+    <link>https://bigsmallwhite.github.io/python%E4%BD%8D%E8%BF%90%E7%AE%97/</link>
     <pubDate>Sun, 09 Aug 2020 18:39:31 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://dllyy.netlify.app/python%E4%BD%8D%E8%BF%90%E7%AE%97/</guid>
+    <guid>https://bigsmallwhite.github.io/python%E4%BD%8D%E8%BF%90%E7%AE%97/</guid>
     <description><![CDATA[Python位运算的用法……]]></description>
 </item><item>
     <title>Python filter,map,reduce</title>
-    <link>https://dllyy.netlify.app/python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0filter-map-reduce/</link>
+    <link>https://bigsmallwhite.github.io/python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0filter-map-reduce/</link>
     <pubDate>Sat, 08 Aug 2020 17:41:05 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://dllyy.netlify.app/python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0filter-map-reduce/</guid>
+    <guid>https://bigsmallwhite.github.io/python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0filter-map-reduce/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/featured-image.jpg" referrerpolicy="no-referrer">
             </div>Python高级函数filter、map、reduce……]]></description>
 </item><item>
     <title>经典排序算法</title>
-    <link>https://dllyy.netlify.app/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</link>
+    <link>https://bigsmallwhite.github.io/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</link>
     <pubDate>Wed, 05 Aug 2020 09:43:56 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://dllyy.netlify.app/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</guid>
+    <guid>https://bigsmallwhite.github.io/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/featured-image.jpg" referrerpolicy="no-referrer">
             </div>经典十大排序算法的Python实现……]]></description>
 </item><item>
     <title>算法学习一</title>
-    <link>https://dllyy.netlify.app/%E8%8F%9C%E9%B8%9F%E5%AE%9E%E4%BE%8B/</link>
+    <link>https://bigsmallwhite.github.io/%E8%8F%9C%E9%B8%9F%E5%AE%9E%E4%BE%8B/</link>
     <pubDate>Mon, 03 Aug 2020 10:42:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://dllyy.netlify.app/%E8%8F%9C%E9%B8%9F%E5%AE%9E%E4%BE%8B/</guid>
+    <guid>https://bigsmallwhite.github.io/%E8%8F%9C%E9%B8%9F%E5%AE%9E%E4%BE%8B/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/featured-image.jpg" referrerpolicy="no-referrer">
             </div>个人的一些算法学习记录和总结……]]></description>
