@@ -4,7 +4,28 @@
         <link>https://bigsmallwhite.github.io/categories/%E5%AD%A6%E4%B9%A0/</link>
         <description>学习 - 分类 - LoveY Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2904158746@qq.com (dll)</managingEditor>
-            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 16 Aug 2020 22:51:29 &#43;0800</lastBuildDate><atom:link href="https://bigsmallwhite.github.io/categories/%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 20 Aug 2020 10:59:55 &#43;0800</lastBuildDate><atom:link href="https://bigsmallwhite.github.io/categories/%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+    <title>Linux中vim的使用</title>
+    <link>https://bigsmallwhite.github.io/linux-vim%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A/</link>
+    <pubDate>Thu, 20 Aug 2020 10:59:55 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://bigsmallwhite.github.io/linux-vim%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A/</guid>
+    <description><![CDATA[Linux中vim命令的一些常用功能……]]></description>
+</item><item>
+    <title>BFS和DFS</title>
+    <link>https://bigsmallwhite.github.io/bfs%E5%92%8Cdfs/</link>
+    <pubDate>Wed, 19 Aug 2020 23:03:51 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://bigsmallwhite.github.io/bfs%E5%92%8Cdfs/</guid>
+    <description><![CDATA[理解并实现BFS和DFS……]]></description>
+</item><item>
+    <title>二叉树的最小深度</title>
+    <link>https://bigsmallwhite.github.io/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%B0%8F%E9%AB%98%E5%BA%A6/</link>
+    <pubDate>Tue, 18 Aug 2020 23:03:51 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://bigsmallwhite.github.io/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%B0%8F%E9%AB%98%E5%BA%A6/</guid>
+    <description><![CDATA[Python实现求二叉树的最小深度……]]></description>
+</item><item>
     <title>平衡二叉树判断</title>
     <link>https://bigsmallwhite.github.io/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%88%A4%E6%96%AD/</link>
     <pubDate>Sun, 16 Aug 2020 22:51:29 &#43;0800</pubDate>
@@ -55,32 +76,5 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="/featured-image.jpg" referrerpolicy="no-referrer">
             </div>Python高级函数filter、map、reduce……]]></description>
-</item><item>
-    <title>Linux挂载</title>
-    <link>https://bigsmallwhite.github.io/linux%E6%8C%82%E8%BD%BD/</link>
-    <pubDate>Sat, 08 Aug 2020 10:59:55 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://bigsmallwhite.github.io/linux%E6%8C%82%E8%BD%BD/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/featured-image.jpg" referrerpolicy="no-referrer">
-            </div>Linux挂载的解释……]]></description>
-</item><item>
-    <title>SQL学习</title>
-    <link>https://bigsmallwhite.github.io/sql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</link>
-    <pubDate>Thu, 06 Aug 2020 14:01:50 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://bigsmallwhite.github.io/sql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/featured-image.png" referrerpolicy="no-referrer">
-            </div>SQL的学习笔记……]]></description>
-</item><item>
-    <title>经典排序算法</title>
-    <link>https://bigsmallwhite.github.io/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</link>
-    <pubDate>Wed, 05 Aug 2020 09:43:56 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://bigsmallwhite.github.io/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/featured-image.jpg" referrerpolicy="no-referrer">
-            </div>经典十大排序算法的Python实现……]]></description>
 </item></channel>
 </rss>
