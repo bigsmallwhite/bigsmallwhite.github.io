@@ -32,7 +32,7 @@
                             "url": "https:\/\/bigsmallwhite.github.io\/images\/Apple-Devices-Preview.png",
                             "width":  3200 ,
                             "height":  2048 
-                        }],"genre": "posts","keywords": "Python, leetcode","wordcount":  705 ,
+                        }],"genre": "posts","keywords": "Python, leetcode","wordcount":  719 ,
         "url": "https:\/\/bigsmallwhite.github.io\/%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91\/","datePublished": "2020-08-22T23:03:51+08:00","dateModified": "2020-08-22T23:03:51+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
@@ -111,7 +111,7 @@
 <main class="main">
                 <div class="container"><article class="page single"><h1 class="single-title animated flipInX">最大二叉树</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Dll</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>学习</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-22">2020-08-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 705 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-22">2020-08-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 719 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91/" class="leancloud_visitors" data-flag-title="最大二叉树">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -172,23 +172,41 @@
 <li>节点的右子结点&ndash;&gt;找到当前数组（上一个节点的右侧）的最值，构建节点。</li>
 </ul>
 <p>思路二：单调栈，单调栈维护的是严格的单调数组，在本题中，通过递增栈（出栈顺序）构建树</p>
-<ul>
-<li>stack = []</li>
-<li>[]</li>
-<li>3     &ndash;&gt; 3入栈[3]</li>
-<li>2&lt;3   &ndash;&gt; 2入栈[3,2], 3.right = 2</li>
-<li>1&lt;1   &ndash;&gt; 1入栈[3,2,1], 2.right = 1</li>
-<li>6&gt;1   &ndash;&gt; 1出栈[3,2], 6.left = 1</li>
-<li>6&gt;2   &ndash;&gt; 2出栈[3], 6.left = 2</li>
-<li>6&gt;3   &ndash;&gt; 3出栈[], 6.left = 3</li>
-<li>[]</li>
-<li>6     &ndash;&gt; 6入栈[6]</li>
-<li>0&lt;6   &ndash;&gt; 0入栈[6,0], 6.right = 0</li>
-<li>5&gt;0   &ndash;&gt; 0出栈[6], 5.left = 0</li>
-<li>5&lt;6   &ndash;&gt; 5入栈[6,5], 6.right = 5</li>
-<li>return stack[0]</li>
-</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">stack = []
+[]    
+3     --&gt; 3入栈[3]
+2&lt;3   --&gt; 2入栈[3,2], 3.right = 2
+1&lt;1   --&gt; 1入栈[3,2,1], 2.right = 1
+6&gt;1   --&gt; 1出栈[3,2], 6.left = 1
+6&gt;2   --&gt; 2出栈[3], 6.left = 2
+6&gt;3   --&gt; 3出栈[], 6.left = 3
+[]
+6     --&gt; 6入栈[6]
+0&lt;6   --&gt; 0入栈[6,0], 6.right = 0
+5&gt;0   --&gt; 0出栈[6], 5.left = 0
+5&lt;6   --&gt; 5入栈[6,5], 6.right = 5
+return stack[0]
+</code></pre></td></tr></table>
 </div>
+</div></div>
         </div>
     </div>
 <p>方法一代码如下：</p>
