@@ -5,35 +5,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>最大二叉树 - LoveY Blog</title><meta name="Description" content="Python实现最大二叉树……"><meta property="og:title" content="最大二叉树" />
-<meta property="og:description" content="Python实现最大二叉树……" />
+        <title>单调栈 - LoveY Blog</title><meta name="Description" content="单调栈的理解和实现……"><meta property="og:title" content="单调栈" />
+<meta property="og:description" content="单调栈的理解和实现……" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://bigsmallwhite.github.io/%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91/" />
+<meta property="og:url" content="https://bigsmallwhite.github.io/%E5%8D%95%E8%B0%83%E6%A0%88/" />
 <meta property="og:image" content="https://bigsmallwhite.github.io/logo.png"/>
-<meta property="article:published_time" content="2020-08-22T23:03:51+08:00" />
-<meta property="article:modified_time" content="2020-08-22T23:03:51+08:00" />
+<meta property="article:published_time" content="2020-08-23T23:03:51+08:00" />
+<meta property="article:modified_time" content="2020-08-23T23:03:51+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://bigsmallwhite.github.io/logo.png"/>
 
-<meta name="twitter:title" content="最大二叉树"/>
-<meta name="twitter:description" content="Python实现最大二叉树……"/>
+<meta name="twitter:title" content="单调栈"/>
+<meta name="twitter:description" content="单调栈的理解和实现……"/>
 <meta name="application-name" content="LoveY">
-<meta name="apple-mobile-web-app-title" content="LoveY"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bigsmallwhite.github.io/%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91/" /><link rel="prev" href="https://bigsmallwhite.github.io/%E5%AF%B9%E7%A7%B0%E5%90%88%E5%B9%B6%E7%BF%BB%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91/" /><link rel="next" href="https://bigsmallwhite.github.io/%E5%8D%95%E8%B0%83%E6%A0%88/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="LoveY"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bigsmallwhite.github.io/%E5%8D%95%E8%B0%83%E6%A0%88/" /><link rel="prev" href="https://bigsmallwhite.github.io/%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "最大二叉树",
+        "headline": "单调栈",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/bigsmallwhite.github.io\/%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91\/"
+            "@id": "https:\/\/bigsmallwhite.github.io\/%E5%8D%95%E8%B0%83%E6%A0%88\/"
         },"image": [{
                             "@type": "ImageObject",
                             "url": "https:\/\/bigsmallwhite.github.io\/images\/Apple-Devices-Preview.png",
                             "width":  3200 ,
                             "height":  2048 
-                        }],"genre": "posts","keywords": "Python, leetcode","wordcount":  719 ,
-        "url": "https:\/\/bigsmallwhite.github.io\/%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91\/","datePublished": "2020-08-22T23:03:51+08:00","dateModified": "2020-08-22T23:03:51+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                        }],"genre": "posts","keywords": "Python, 算法","wordcount":  799 ,
+        "url": "https:\/\/bigsmallwhite.github.io\/%E5%8D%95%E8%B0%83%E6%A0%88\/","datePublished": "2020-08-23T23:03:51+08:00","dateModified": "2020-08-23T23:03:51+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
                     "@type": "ImageObject",
@@ -43,7 +43,7 @@
                 }},"author": {
                 "@type": "Person",
                 "name": "Dll"
-            },"description": "Python实现最大二叉树……"
+            },"description": "单调栈的理解和实现……"
     }
     </script></head>
     <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -109,107 +109,59 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">最大二叉树</h1><div class="post-meta">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">单调栈</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Dll</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>学习</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-22">2020-08-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 719 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91/" class="leancloud_visitors" data-flag-title="最大二叉树">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-23">2020-08-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 799 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/%E5%8D%95%E8%B0%83%E6%A0%88/" class="leancloud_visitors" data-flag-title="单调栈">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
-        </div><div class="content" id="content"><p>这题其实用递归很简单，重点是单调栈的解法~</p>
-<div class="details admonition info open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-info-circle fa-fw"></i>信息<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><p>给定一个不含重复元素的整数数组。一个以此数组构建的最大二叉树定义如下：</p>
-<p>二叉树的根是数组中的最大元素。</p>
-<p>左子树是通过数组中最大值左边部分构造出的最大二叉树。</p>
-<p>右子树是通过数组中最大值右边部分构造出的最大二叉树。</p>
-<p>通过给定的数组构建最大二叉树，并且输出这个树的根节点。</p>
-<p>示例：</p>
-<p>输入：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">[3,2,1,6,0,5]
-</code></pre></td></tr></table>
-</div>
-</div><p>输出：返回下面这棵树的根节点：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">      6
-    /   \
-   3     5
-    \    / 
-     2  0   
-       \
-        1
-</code></pre></td></tr></table>
-</div>
-</div></div>
-        </div>
-    </div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#更大的下一个">更大的下一个</a></li>
+            <li><a href="#更大的前一个">更大的前一个</a></li>
+            <li><a href="#更小的下一个">更小的下一个</a></li>
+            <li><a href="#更小的前一个">更小的前一个</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>做完题后喜欢看看别人的思路，总能发现不一样的方法，让人直呼🤙🤙🤙</p>
+<p>在用递归做完最大二叉树后，也是看到别人用单调栈的方法，发现很巧妙，想着深入学习一下~</p>
 <div class="details admonition note open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-pencil-alt fa-fw"></i>方法<i class="details-icon fas fa-angle-right fa-fw"></i>
+            <i class="icon fas fa-pencil-alt fa-fw"></i>什么是单调栈<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p>思路一：递归，思路不难</p>
-<ul>
-<li>找到当前数组的最值，构建节点</li>
-<li>节点的左子结点&ndash;&gt;找到当前数组（上一个节点的左侧）的最值，构建节点；</li>
-<li>节点的右子结点&ndash;&gt;找到当前数组（上一个节点的右侧）的最值，构建节点。</li>
-</ul>
-<p>思路二：单调栈，单调栈维护的是严格的单调数组，在本题中，通过递增栈（出栈顺序）构建树</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">stack = []
-[]    
-3     --&gt; 3入栈[3]
-2&lt;3   --&gt; 2入栈[3,2], 3.right = 2
-1&lt;1   --&gt; 1入栈[3,2,1], 2.right = 1
-6&gt;1   --&gt; 1出栈[3,2], 6.left = 1
-6&gt;2   --&gt; 2出栈[3], 6.left = 2
-6&gt;3   --&gt; 3出栈[], 6.left = 3
-[]
-6     --&gt; 6入栈[6]
-0&lt;6   --&gt; 0入栈[6,0], 6.right = 0
-5&gt;0   --&gt; 0出栈[6], 5.left = 0
-5&lt;6   --&gt; 5入栈[6,5], 6.right = 5
-return stack[0]
-</code></pre></td></tr></table>
+            <div class="admonition-content"><p>单调栈指的是：<strong>栈中存放的数据出栈应该是有序的</strong></p>
+<p><strong>单调递增栈</strong>：栈中数据<strong>出栈</strong>的序列为单调递增序列(栈顶到栈底&ndash;&gt;递增)</p>
+<p><strong>单调递减栈</strong>：栈中数据<strong>出栈</strong>的序列为单调递减序列(栈顶到栈底&ndash;&gt;递减)</p>
 </div>
-</div></div>
         </div>
     </div>
-<p>方法一代码如下：</p>
+<p>栈结构大家都很熟悉（先进后出），那单调栈到底有啥用呢？</p>
+<p>单调栈主要回答这样的几种问题:</p>
+<ul>
+<li>比当前元素<strong>更大的下一个</strong>元素</li>
+<li>比当前元素<strong>更大的前一个</strong>元素</li>
+<li>比当前元素<strong>更小的下一个</strong>元素</li>
+<li>比当前元素<strong>更小的前一个</strong>元素</li>
+</ul>
+<p>废话不多说，还是直接用代码解释更简单明了……</p>
+<h4 id="更大的下一个">更大的下一个</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -225,103 +177,134 @@ return stack[0]
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">TreeNode</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="bp">None</span>
-
-<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-    <span class="c1"># 递归</span>
-    <span class="k">def</span> <span class="nf">constructMaximumBinaryTree1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TreeNode</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> 
-        <span class="n">max_num</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-        <span class="n">root</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">max_num</span><span class="p">)</span>
-        <span class="n">root</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">constructMaximumBinaryTree1</span><span class="p">(</span><span class="n">nums</span><span class="p">[:</span><span class="n">nums</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">max_num</span><span class="p">)])</span>
-        <span class="n">root</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">constructMaximumBinaryTree1</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">nums</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">max_num</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span>
-        <span class="k">return</span> <span class="n">root</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>方法二代码如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">TreeNode</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="bp">None</span>
-
-<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-    <span class="c1"># 单调栈</span>
-    <span class="k">def</span> <span class="nf">constructMaximumBinaryTree2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TreeNode</span><span class="p">:</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">nextGreaterElement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">):</span>
+        <span class="s1">&#39;&#39;&#39;
+</span><span class="s1">        res:&#39;-1&#39;代表没有大于当前元素的值，其他值代表大于当前值的下一个值，下同
+</span><span class="s1">        &#39;&#39;&#39;</span>
         <span class="n">stack</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
-            <span class="n">cur</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-            <span class="c1"># 当前节点大于栈顶元素，pop的仅次于当前节点的元素是当前元素的左子树根</span>
-            <span class="k">while</span> <span class="n">stack</span> <span class="ow">and</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">val</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-                <span class="n">cur</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-            <span class="c1"># 新加入的加点一定小于栈顶元素，一定是栈顶元素的右子树根</span>
-            <span class="k">if</span> <span class="n">stack</span><span class="p">:</span>
-                <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">cur</span>
-            <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cur</span><span class="p">)</span>
-        <span class="c1"># 最后的节点最大，为整棵树的根</span>
-        <span class="k">return</span> <span class="n">stack</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+            <span class="c1"># 入栈元素只能比栈顶元素小，新元素大于栈顶，就要更新</span>
+            <span class="k">while</span> <span class="n">stack</span> <span class="ow">and</span> <span class="n">nums</span><span class="p">[</span><span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+                <span class="c1"># 这一步执行具体的操作，这里是记录下一个大的数</span>
+                <span class="n">res</span><span class="p">[</span><span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()]</span> <span class="o">=</span> <span class="n">n</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span>
 </code></pre></td></tr></table>
 </div>
-</div></div><div class="post-footer" id="post-footer">
+</div><h4 id="更大的前一个">更大的前一个</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">preGreaterElement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">):</span>
+        <span class="n">stack</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+            <span class="c1"># 保证先进栈的元素大，如果来个更大的，就把前面小的全部pop掉，保证站内元素是紧密相连的有序序列</span>
+            <span class="k">while</span> <span class="n">stack</span> <span class="ow">and</span> <span class="n">nums</span><span class="p">[</span><span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">stack</span><span class="p">:</span>
+                <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="更小的下一个">更小的下一个</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">nextSmallerElement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">):</span>
+        <span class="n">stack</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+            <span class="c1"># 入栈元素只能比栈顶元素大</span>
+            <span class="k">while</span> <span class="n">stack</span> <span class="ow">and</span> <span class="n">nums</span><span class="p">[</span><span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span>
+                <span class="c1"># 这一步执行具体的操作，这里是记录下一个小的数</span>
+                <span class="n">res</span><span class="p">[</span><span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()]</span> <span class="o">=</span> <span class="n">n</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="更小的前一个">更小的前一个</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">preSmallerElement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">):</span>
+        <span class="n">stack</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+            <span class="c1"># 保证先进栈的元素小</span>
+            <span class="k">while</span> <span class="n">stack</span> <span class="ow">and</span> <span class="n">nums</span><span class="p">[</span><span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">stack</span><span class="p">:</span>
+                <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>总结：单调栈就是维护一个栈内数据有序的栈，只要栈内元素不是单调的，就一个个把栈顶元素pop掉，直到新加入的元素和剩余的元素单调为止。在pop操作的同时，更新具体需求的操作就行。具体的实例有很多，可以查看上一篇文章<a href="https://dllyy.xyz/%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91/" target="_blank" rel="noopener noreffer">最大二叉树</a>的单调栈解法。</p>
+</blockquote></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2020-08-22</span>
+                <span>更新于 2020-08-23</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://bigsmallwhite.github.io/%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91/" data-title="最大二叉树" data-hashtags="Python,leetcode"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://bigsmallwhite.github.io/%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91/" data-hashtag="Python"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://bigsmallwhite.github.io/%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91/" data-title="最大二叉树"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://bigsmallwhite.github.io/%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91/" data-title="最大二叉树"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://bigsmallwhite.github.io/%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91/" data-title="最大二叉树"><i class="fab fa-weibo fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://bigsmallwhite.github.io/%E5%8D%95%E8%B0%83%E6%A0%88/" data-title="单调栈" data-hashtags="Python,算法"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://bigsmallwhite.github.io/%E5%8D%95%E8%B0%83%E6%A0%88/" data-hashtag="Python"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://bigsmallwhite.github.io/%E5%8D%95%E8%B0%83%E6%A0%88/" data-title="单调栈"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://bigsmallwhite.github.io/%E5%8D%95%E8%B0%83%E6%A0%88/" data-title="单调栈"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://bigsmallwhite.github.io/%E5%8D%95%E8%B0%83%E6%A0%88/" data-title="单调栈"><i class="fab fa-weibo fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/leetcode/">leetcode</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/%E7%AE%97%E6%B3%95/">算法</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/%E5%AF%B9%E7%A7%B0%E5%90%88%E5%B9%B6%E7%BF%BB%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91/" class="prev" rel="prev" title="对称、合并、翻转二叉树二叉树"><i class="fas fa-angle-left fa-fw"></i>对称、合并、翻转二叉树二叉树</a>
-            <a href="/%E5%8D%95%E8%B0%83%E6%A0%88/" class="next" rel="next" title="单调栈">单调栈<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91/" class="prev" rel="prev" title="最大二叉树"><i class="fas fa-angle-left fa-fw"></i>最大二叉树</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

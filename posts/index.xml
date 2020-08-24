@@ -4,7 +4,14 @@
         <link>https://bigsmallwhite.github.io/posts/</link>
         <description>所有文章 | LoveY Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2904158746@qq.com (dll)</managingEditor>
-            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 22 Aug 2020 23:03:51 &#43;0800</lastBuildDate><atom:link href="https://bigsmallwhite.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 23 Aug 2020 23:03:51 &#43;0800</lastBuildDate><atom:link href="https://bigsmallwhite.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>单调栈</title>
+    <link>https://bigsmallwhite.github.io/%E5%8D%95%E8%B0%83%E6%A0%88/</link>
+    <pubDate>Sun, 23 Aug 2020 23:03:51 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://bigsmallwhite.github.io/%E5%8D%95%E8%B0%83%E6%A0%88/</guid>
+    <description><![CDATA[单调栈的理解和实现……]]></description>
+</item><item>
     <title>最大二叉树</title>
     <link>https://bigsmallwhite.github.io/%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
     <pubDate>Sat, 22 Aug 2020 23:03:51 &#43;0800</pubDate>
@@ -69,12 +76,5 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="/featured-image.jpg" referrerpolicy="no-referrer">
             </div>特别祝愿博客中另一位大写的人顺顺顺~~~冲冲冲~~~]]></description>
-</item><item>
-    <title>查找数组中重复的数字</title>
-    <link>https://bigsmallwhite.github.io/%E5%89%91%E6%8C%87offer-03%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</link>
-    <pubDate>Wed, 12 Aug 2020 23:57:20 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://bigsmallwhite.github.io/%E5%89%91%E6%8C%87offer-03%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</guid>
-    <description><![CDATA[Python实现查找数组中重复的数字……]]></description>
 </item></channel>
 </rss>
