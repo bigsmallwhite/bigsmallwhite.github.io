@@ -14,6 +14,13 @@
     <guid>https://bigsmallwhite.github.io/2020-8-25-%E8%BF%88%E8%BF%9B%E4%B8%80%E5%8F%AA%E8%84%9A/</guid>
     <description><![CDATA[特别恭喜博客中另一位大写的人成功迈进半只脚，预祝顺利上岸……]]></description>
 </item><item>
+    <title>实现逆序栈</title>
+    <link>https://bigsmallwhite.github.io/%E5%AE%9E%E7%8E%B0%E9%80%86%E5%BA%8F%E6%A0%88/</link>
+    <pubDate>Mon, 24 Aug 2020 23:03:51 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://bigsmallwhite.github.io/%E5%AE%9E%E7%8E%B0%E9%80%86%E5%BA%8F%E6%A0%88/</guid>
+    <description><![CDATA[只能用递归实现栈的逆序……]]></description>
+</item><item>
     <title>单调栈</title>
     <link>https://bigsmallwhite.github.io/%E5%8D%95%E8%B0%83%E6%A0%88/</link>
     <pubDate>Sun, 23 Aug 2020 23:03:51 &#43;0800</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://bigsmallwhite.github.io/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%88%A4%E6%96%AD/</guid>
     <description><![CDATA[利用Python递归实现平衡二叉树的判断……]]></description>
-</item><item>
-    <title>二叉树的最大深度</title>
-    <link>https://bigsmallwhite.github.io/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E9%AB%98%E5%BA%A6/</link>
-    <pubDate>Fri, 14 Aug 2020 23:03:51 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://bigsmallwhite.github.io/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E9%AB%98%E5%BA%A6/</guid>
-    <description><![CDATA[Python实现求二叉树的最大深度……]]></description>
 </item></channel>
 </rss>
