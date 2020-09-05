@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Linux文件内容查看 - LoveY Blog</title><meta name="Description" content="Linux文件内容查看常用命令……"><meta property="og:title" content="Linux文件内容查看" />
+<meta property="og:description" content="Linux文件内容查看常用命令……" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bigsmallwhite.github.io/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/" />
+<meta property="og:image" content="https://bigsmallwhite.github.io/logo.png"/>
+<meta property="article:published_time" content="2020-08-29T10:59:55+08:00" />
+<meta property="article:modified_time" content="2020-08-29T10:59:55+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://bigsmallwhite.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Linux文件内容查看"/>
+<meta name="twitter:description" content="Linux文件内容查看常用命令……"/>
+<meta name="application-name" content="LoveY">
+<meta name="apple-mobile-web-app-title" content="LoveY"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bigsmallwhite.github.io/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/" /><link rel="prev" href="https://bigsmallwhite.github.io/linux%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Linux文件内容查看",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/bigsmallwhite.github.io\/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/bigsmallwhite.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "Linux","wordcount":  1265 ,
+        "url": "https:\/\/bigsmallwhite.github.io\/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B\/","datePublished": "2020-08-29T10:59:55+08:00","dateModified": "2020-08-29T10:59:55+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/bigsmallwhite.github.io\/images\/avatar.png",
+                    "width":  959 ,
+                    "height":  959 
+                }},"author": {
+                "@type": "Person",
+                "name": "Dll"
+            },"description": "Linux文件内容查看常用命令……"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="LoveY Blog">LoveY<span class="header-title-post"><i class='far fa-kiss-wink-heart fa-fw'></i></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/" title="所有文章"><i class='fa fa-book'></i> 文章 </a><a class="menu-item" href="/tags/" title="文章标签"><i class='fa fa-bookmark'></i> 标签 </a><a class="menu-item" href="/categories/" title="文章分类"><i class='fa fa-th-list'></i> 分类 </a><a class="menu-item" href="/categories/logs/" title="所有日志"><i class='fa fa-coffee'></i> 日志 </a><a class="menu-item" href="/about/" title="关于博客"><i class='fa fa-heart'></i> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="LoveY Blog">LoveY<span class="header-title-post"><i class='far fa-kiss-wink-heart fa-fw'></i></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="所有文章"><i class='fa fa-book'></i>文章</a><a class="menu-item" href="/tags/" title="文章标签"><i class='fa fa-bookmark'></i>标签</a><a class="menu-item" href="/categories/" title="文章分类"><i class='fa fa-th-list'></i>分类</a><a class="menu-item" href="/categories/logs/" title="所有日志"><i class='fa fa-coffee'></i>日志</a><a class="menu-item" href="/about/" title="关于博客"><i class='fa fa-heart'></i>关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Linux文件内容查看</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Dll</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>学习</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-29">2020-08-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1265 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/" class="leancloud_visitors" data-flag-title="Linux文件内容查看">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#cat第一行显示">cat（第一行显示）</a></li>
+        <li><a href="#tac最后一行显示">tac（最后一行显示）</a></li>
+        <li><a href="#nl显示行号">nl（显示行号）</a></li>
+        <li><a href="#more翻页">more（翻页）</a></li>
+        <li><a href="#less翻页">less（翻页）</a></li>
+        <li><a href="#head显示头几行">head（显示头几行）</a></li>
+        <li><a href="#tail显示尾几行">tail（显示尾几行）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>学习linux，必然少不了经常对文件内容的查看，以下是一些常用的查看命令。</p>
+</blockquote>
+<p>Linux系统中使用以下命令来查看文件的内容：</p>
+<ul>
+<li><code>cat</code>  由第一行开始显示文件内容</li>
+<li><code>tac</code>  从最后一行开始显示，可以看出 <code>tac</code> 是 <code>cat</code> 的倒着写！</li>
+<li><code>nl</code>   显示的时候，顺道输出行号！</li>
+<li><code>more</code> 一页一页的显示文件内容</li>
+<li><code>less</code> 与 <code>more</code> 类似，但是比 <code>more</code> 更好的是，他可以往前翻页！</li>
+<li><code>head</code> 只看头几行</li>
+<li><code>tail</code> 只看尾巴几行</li>
+</ul>
+<p>你可以使用 <code>man [命令]</code>来查看各个命令的使用文档，如 ：<code>man cat</code>。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="index.zh-cn.assets/1599269940558.png"
+        data-srcset="/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/index.zh-cn.assets/1599269940558.png, index.zh-cn.assets/1599269940558.png 1.5x, /linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/index.zh-cn.assets/1599269940558.png 2x"
+        data-sizes="auto"
+        alt="/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/index.zh-cn.assets/1599269940558.png"
+        title="1599269940558" /></p>
+<h3 id="cat第一行显示">cat（第一行显示）</h3>
+<p>由第一行开始显示文件内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cat [-AbEnTv]
+</code></pre></td></tr></table>
+</div>
+</div><p>选项与参数：</p>
+<ul>
+<li><code>-A</code> ：相当於 <code>-vET</code> 的整合选项，可列出一些特殊字符而不是空白而已；</li>
+<li><code>-b</code> ：列出行号，仅针对非空白行做行号显示，空白行不标行号！</li>
+<li><code>-E</code> ：将结尾的断行字节 <code>$</code> 显示出来；</li>
+<li><code>-n</code> ：列印出行号，连同空白行也会有行号，与 <code>-b</code> 的选项不同，效果类似<code>nl</code>命令；</li>
+<li><code>-T</code> ：将 <code>[tab]</code> 按键以 <code>^I</code> 显示出来；</li>
+<li><code>-v</code> ：列出一些看不出来的特殊字符</li>
+</ul>
+<p>检看 <code>/etc/issue</code> 这个文件的内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cat /etc/issue
+Ubuntu 18.04.4 LTS \n \l
+                          # 多出一个空行
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="tac最后一行显示">tac（最后一行显示）</h3>
+<p><code>tac</code>与<code>cat</code>命令刚好相反，文件内容从最后一行开始显示（倒序显示），如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">tac /etc/issue
+						# 空行在前面
+Ubuntu 18.04.4 LTS \n \l
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="nl显示行号">nl（显示行号）</h3>
+<p>显示行号</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">nl [-bnw] 文件
+</code></pre></td></tr></table>
+</div>
+</div><p>选项与参数：</p>
+<ul>
+<li><code>-b</code> ：指定行号指定的方式，主要有两种：
+<ul>
+<li><code>-b a</code> ：表示不论是否为空行，也同样列出行号(类似 <code>cat -n</code>)；</li>
+<li><code>-b t</code> ：如果有空行，空的那一行不要列出行号(默认值)；</li>
+</ul>
+</li>
+<li><code>-n</code> ：列出行号表示的方法，主要有三种：
+<ul>
+<li><code>-n ln</code> ：行号在荧幕的最左方显示；</li>
+<li><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="index.zh-cn.assets/1599272800728.png"
+        data-srcset="/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/index.zh-cn.assets/1599272800728.png, index.zh-cn.assets/1599272800728.png 1.5x, /linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/index.zh-cn.assets/1599272800728.png 2x"
+        data-sizes="auto"
+        alt="/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/index.zh-cn.assets/1599272800728.png"
+        title="1599272800728" /></li>
+<li><code>-n rn</code> ：行号在自己栏位的最右方显示，且不加 0 ；</li>
+<li><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="index.zh-cn.assets/1599272835377.png"
+        data-srcset="/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/index.zh-cn.assets/1599272835377.png, index.zh-cn.assets/1599272835377.png 1.5x, /linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/index.zh-cn.assets/1599272835377.png 2x"
+        data-sizes="auto"
+        alt="/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/index.zh-cn.assets/1599272835377.png"
+        title="1599272835377" /></li>
+<li><code>-n rz</code> ：行号在自己栏位的最右方显示，且加 0 ；</li>
+<li><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="index.zh-cn.assets/1599272865937.png"
+        data-srcset="/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/index.zh-cn.assets/1599272865937.png, index.zh-cn.assets/1599272865937.png 1.5x, /linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/index.zh-cn.assets/1599272865937.png 2x"
+        data-sizes="auto"
+        alt="/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/index.zh-cn.assets/1599272865937.png"
+        title="1599272865937" /></li>
+</ul>
+</li>
+<li><code>-w</code> ：行号栏位的占用的位数。</li>
+</ul>
+<h3 id="more翻页">more（翻页）</h3>
+<p>一页一页翻动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">more /etc/man_db.config 
+#
+# Generated automatically from man.conf.in by the
+# configure script.
+#
+# man.conf from man-1.6d
+....(中间省略)....
+--More--(28%)  &lt;== 光标在这里等待你的命令
+</code></pre></td></tr></table>
+</div>
+</div><p>在 <code>more</code> 这个程序的运行过程中，有以下命令可执行：</p>
+<ul>
+<li><code>空白键 (space)</code>：代表向下翻一页；</li>
+<li><code>Enter</code>：代表向下翻『一行』；</li>
+<li><code>/字串</code> ：代表在这个显示的内容当中，向下搜寻<code>字串</code>这个关键字；</li>
+<li><code>:f</code>：立刻显示出档名以及目前显示的行数；</li>
+<li><code>q</code>：代表立刻离开 more ，不再显示该文件内容。</li>
+<li><code>b 或 [ctrl]-b</code>：代表往回翻页，只对文件有用。</li>
+</ul>
+<h3 id="less翻页">less（翻页）</h3>
+<p>一页一页翻动，以下实例输出<code>/etc/man.config</code>文件的内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">less /etc/man.config
+#
+# Generated automatically from man.conf.in by the
+# configure script.
+#
+# man.conf from man-1.6d
+....(中间省略)....
+:   &lt;== 这里可以等待你输入命令！
+</code></pre></td></tr></table>
+</div>
+</div><p>在<code>less</code>这个程序的运行过程中，有以下命令可执行：</p>
+<ul>
+<li><code>空白键</code>：向下翻动一页；</li>
+<li><code>[pagedown]</code>：向下翻动一页；</li>
+<li><code>[pageup]</code>：向上翻动一页；</li>
+<li><code>/字串</code>：向下搜寻<code>字串</code>的功能；</li>
+<li><code>?字串</code>：向上搜寻<code>字串</code>的功能；</li>
+<li><code>n</code>：重复前一个搜寻 (与 <code>/</code> 或 <code>?</code> 有关)</li>
+<li><code>N</code>：反向的重复前一个搜寻 (与 <code>/</code> 或 <code>?</code> 有关)</li>
+<li><code>q</code>：离开 <code>less</code> 这个程序；</li>
+</ul>
+<h3 id="head显示头几行">head（显示头几行）</h3>
+<p>取出文件前面几行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">head [-n number] 文件 
+</code></pre></td></tr></table>
+</div>
+</div><p>选项与参数：</p>
+<ul>
+<li>-n ：后面接数字，代表显示几行的意思</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">head /etc/man.config
+</code></pre></td></tr></table>
+</div>
+</div><p>默认的情况中，显示前面 10 行！若要显示前 20 行，就得要这样：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">head -n 20 /etc/man.config
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="tail显示尾几行">tail（显示尾几行）</h3>
+<p>取出文件后面几行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">tail [-n number] 文件 
+</code></pre></td></tr></table>
+</div>
+</div><p>选项与参数：</p>
+<ul>
+<li>-n ：后面接数字，代表显示几行的意思</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">tail /etc/man.config
+# 默认的情况中，显示最后的十行！若要显示最后的 20 行，就得要这样：
+tail -n 20 /etc/man.config
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-08-29</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://bigsmallwhite.github.io/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/" data-title="Linux文件内容查看" data-hashtags="Linux"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://bigsmallwhite.github.io/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/" data-hashtag="Linux"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://bigsmallwhite.github.io/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/" data-title="Linux文件内容查看"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://bigsmallwhite.github.io/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/" data-title="Linux文件内容查看"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://bigsmallwhite.github.io/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/" data-title="Linux文件内容查看"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux/">Linux</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/linux%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" class="prev" rel="prev" title="Linux文件和目录管理"><i class="fas fa-angle-left fa-fw"></i>Linux文件和目录管理</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">dll</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{"valine":{"appId":"HkjwjqbvBuR9wDB5nCMVD4xL-gzGzoHsz","appKey":"Vz2O6Q0k6kQdfaulv7whvyF9","avatar":"wavatar","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论……","recordIP":true,"visitor":true}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

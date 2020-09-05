@@ -4,7 +4,14 @@
         <link>https://bigsmallwhite.github.io/tags/linux/</link>
         <description>Linux - 标签 - LoveY Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2904158746@qq.com (dll)</managingEditor>
-            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 28 Aug 2020 10:59:55 &#43;0800</lastBuildDate><atom:link href="https://bigsmallwhite.github.io/tags/linux/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 29 Aug 2020 10:59:55 &#43;0800</lastBuildDate><atom:link href="https://bigsmallwhite.github.io/tags/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>Linux文件内容查看</title>
+    <link>https://bigsmallwhite.github.io/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/</link>
+    <pubDate>Sat, 29 Aug 2020 10:59:55 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://bigsmallwhite.github.io/linux%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B/</guid>
+    <description><![CDATA[Linux文件内容查看常用命令……]]></description>
+</item><item>
     <title>Linux文件和目录管理</title>
     <link>https://bigsmallwhite.github.io/linux%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/</link>
     <pubDate>Fri, 28 Aug 2020 10:59:55 &#43;0800</pubDate>
