@@ -5,35 +5,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Linux-xargs命令 - LoveY Blog</title><meta name="Description" content="Linux-xargs、find、grep深入理解……"><meta property="og:title" content="Linux-xargs命令" />
-<meta property="og:description" content="Linux-xargs、find、grep深入理解……" />
+        <title>shell传递参数 - LoveY Blog</title><meta name="Description" content="Shell传递参数学习……"><meta property="og:title" content="shell传递参数" />
+<meta property="og:description" content="Shell传递参数学习……" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://bigsmallwhite.github.io/linux-xargs/" />
+<meta property="og:url" content="https://bigsmallwhite.github.io/shell%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/" />
 <meta property="og:image" content="https://bigsmallwhite.github.io/logo.png"/>
-<meta property="article:published_time" content="2020-09-02T10:59:55+08:00" />
-<meta property="article:modified_time" content="2020-09-02T10:59:55+08:00" />
+<meta property="article:published_time" content="2020-09-03T10:59:55+08:00" />
+<meta property="article:modified_time" content="2020-09-03T10:59:55+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://bigsmallwhite.github.io/logo.png"/>
 
-<meta name="twitter:title" content="Linux-xargs命令"/>
-<meta name="twitter:description" content="Linux-xargs、find、grep深入理解……"/>
+<meta name="twitter:title" content="shell传递参数"/>
+<meta name="twitter:description" content="Shell传递参数学习……"/>
 <meta name="application-name" content="LoveY">
-<meta name="apple-mobile-web-app-title" content="LoveY"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bigsmallwhite.github.io/linux-xargs/" /><link rel="prev" href="https://bigsmallwhite.github.io/linux-grep/" /><link rel="next" href="https://bigsmallwhite.github.io/shell%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="LoveY"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bigsmallwhite.github.io/shell%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/" /><link rel="prev" href="https://bigsmallwhite.github.io/linux-xargs/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Linux-xargs命令",
+        "headline": "shell传递参数",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/bigsmallwhite.github.io\/linux-xargs\/"
+            "@id": "https:\/\/bigsmallwhite.github.io\/shell%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0\/"
         },"image": [{
                             "@type": "ImageObject",
                             "url": "https:\/\/bigsmallwhite.github.io\/images\/Apple-Devices-Preview.png",
                             "width":  3200 ,
                             "height":  2048 
-                        }],"genre": "posts","keywords": "Linux","wordcount":  1293 ,
-        "url": "https:\/\/bigsmallwhite.github.io\/linux-xargs\/","datePublished": "2020-09-02T10:59:55+08:00","dateModified": "2020-09-02T10:59:55+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                        }],"genre": "posts","keywords": "shell","wordcount":  956 ,
+        "url": "https:\/\/bigsmallwhite.github.io\/shell%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0\/","datePublished": "2020-09-03T10:59:55+08:00","dateModified": "2020-09-03T10:59:55+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
                     "@type": "ImageObject",
@@ -43,7 +43,7 @@
                 }},"author": {
                 "@type": "Person",
                 "name": "Dll"
-            },"description": "Linux-xargs、find、grep深入理解……"
+            },"description": "Shell传递参数学习……"
     }
     </script></head>
     <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -109,167 +109,16 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">目录</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Linux-xargs命令</h1><div class="post-meta">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">shell传递参数</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Dll</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>学习</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-02">2020-09-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1293 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/linux-xargs/" class="leancloud_visitors" data-flag-title="Linux-xargs命令">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-03">2020-09-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 956 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/shell%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/" class="leancloud_visitors" data-flag-title="shell传递参数">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li>
-          <ul>
-            <li>
-              <ul>
-                <li><a href="#问题">问题</a></li>
-                <li><a href="#参数与标准输入">参数与标准输入</a></li>
-                <li><a href="#管道">管道</a></li>
-                <li><a href="#xargs-命令">xargs 命令</a></li>
-                <li><a href="#find-与-grep">find 与 grep</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content"><blockquote>
-<p>对 <code>find</code>，<code>xargs</code>，<code>grep</code> 和<code>|</code>的一些总结。<a href="http://fatmouse.xyz/2016/05/10/2016-05-10-find-grep-xargs-and-pipe/" target="_blank" rel="noopener noreffer">参考文献</a></p>
+        </div><div class="content" id="content"><blockquote>
+<p>我们可以在执行 Shell 脚本时，向脚本传递参数，脚本内获取参数的格式为：<code>$n</code>。<code>n</code> 代表一个数字，其中 <code>0</code> 为<strong>执行的文件名</strong>（包含文件路径），<code>1</code> 为执行脚本的第一个参数，<code>2</code> 为执行脚本的第二个参数，以此类推……</p>
 </blockquote>
-<ul>
-<li><code>xargs</code> 是给命令传递参数的一个过滤器，也是组合多个命令的一个工具。</li>
-<li><code>xargs</code> 可以将管道或标准输入<code>（stdin）</code>数据转换成命令行参数，也能够从文件的输出中读取数据。</li>
-<li><code>xargs</code> 也可以将单行或多行文本输入转换为其他格式，例如多行变单行，单行变多行。</li>
-<li><code>xargs</code> 能够捕获一个命令的输出，然后传递给另外一个命令。</li>
-<li><code>xargs</code> 一般是和管道一起使用。</li>
-</ul>
-<h5 id="问题">问题</h5>
-<p>一般在目录中搜索含有固定字符串文件的命令：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">find . -name &#39;*.py&#39; |xargs grep test
-</code></pre></td></tr></table>
-</div>
-</div><p>刚开始的时候，不熟悉 <code>xargs</code> 命令，大部分人可能直接使用的命令是：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">find . -name &#39;*.py&#39; |grep test
-</code></pre></td></tr></table>
-</div>
-</div><p>结果并不是自己所期望的。此命令只是找出文件名 <code>*.py 有 </code>test` 的情况。</p>
-<p>究竟 <code>xargs</code> 做了什么，使得结果不相同？</p>
-<h5 id="参数与标准输入">参数与标准输入</h5>
-<p>这两个词我们在 <code>Linux</code> 命令中是很常见的。但是参数和标准输入其实是有区别的。</p>
-<p>我们日常使用的很多命令，例如 <code>ls -lah .</code> 中。<code>l</code>， <code>a</code>， <code>h</code> ，<code>.</code> 都是命令 <code>ls</code> 的参数。至于标准输入，<strong>通常来讲标准输入的数据来源就是我们的终端输入</strong>。在 <code>Linux</code> 命令中，有些命令可以接收标准输入，有些是不能的。像上面的 <code>ls</code>，就是只能接收参数，不能接收标准输入。像 <code>cat</code> 命令或 <code>echo</code> 命令，这些是可以的。</p>
-<p>怎么分辨一个命令可不可以接收标准输入？</p>
-<p>很简单，当你敲完命令回车后，终端会等待接收你的输入，例如当你在终端输入 <code>cat</code> 后，终端会等待你输入字符，当你输入一些字符后，然后按 <code>Ctrl-C</code> 发送终止符号。这时 <code>cat</code> 命令接收标准输入完毕，执行命令，也就是将刚才键入的内容输出的标准输出上（屏幕）。</p>
-<h5 id="管道">管道</h5>
-<p>管道的作用是将前面命令的<strong>标准输出</strong>作为后面命令的<strong>标准输入</strong>。这里要注意，后面的命令接收的是标准输入，所以如果命令不支持接收标准输入，那么就不能直接使用管道，例如常用的 <code>ls</code> 命令，只能使用参数，而不能使用标准输入，所以 <code>[command] | ls</code> 是不能使用的。而命令如 <code>echo</code> 或 <code>cat</code> 就可以。有啥方法来实现这些不能使用标准输入的命令与管道结合呢？这时候 <code>xargs</code> 便出场了。</p>
-<h5 id="xargs-命令">xargs 命令</h5>
-<p><code>xargs</code> 命令通俗来讲就是<strong>将标准输入转成各种格式化的参数</strong>，所以命令 <code>[command 1] | xargs [command 2]</code> 就是将 <code>command 1</code> 的标准输出结果，通过管道 <code>|</code> 变成 <code>xargs</code> 的标准输入，然后 <code>xargs</code> 再将此标准输入变成参数，传给 <code>[command 2]</code>。这样一来，通过 <code>xargs</code> 命令，我们便可以在管道后面使用那些不接收标准输入的命令了。例如 <code>[command 1]|xargs ls</code>。</p>
-<p>比如我们通过<code>xargs</code>实现<code>ls-a</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">echo -a | xargs ls
-</code></pre></td></tr></table>
-</div>
-</div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="index.zh-cn.assets/1599314292556.png"
-        data-srcset="/linux-xargs/index.zh-cn.assets/1599314292556.png, index.zh-cn.assets/1599314292556.png 1.5x, /linux-xargs/index.zh-cn.assets/1599314292556.png 2x"
-        data-sizes="auto"
-        alt="/linux-xargs/index.zh-cn.assets/1599314292556.png"
-        title="1599314292556" /></p>
-<h5 id="find-与-grep">find 与 grep</h5>
-<p>了解以上的知识点，就可以解答最开始的问题</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">find . -name &#39;*.py&#39; |grep test
-</code></pre></td></tr></table>
-</div>
-</div><p>和</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">find . -name &#39;*.py&#39; |xargs grep test
-</code></pre></td></tr></table>
-</div>
-</div><p>结果到底为什么不一样。</p>
-<p>我们首先来查看 grep 手册。通过 <code>man grep</code> 命令。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">DESCRIPTION grep searches the named input FILEs <span class="o">(</span>or standard input <span class="k">if</span> no files are named, or <span class="k">if</span> a single hyphen-minus <span class="o">(</span>-<span class="o">)</span> is given as file name<span class="o">)</span> <span class="k">for</span> lines containing a match to the given PATTERN.  By default, grep prints the matching lines.
-</code></pre></td></tr></table>
-</div>
-</div><p>这里可以看到 grep 是支持标准输入的。</p>
-<p>假设目录存在如下文件：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">lsAltitest.py  python.py  runora.py  test.py  TransferFile.py
-</code></pre></td></tr></table>
-</div>
-</div><p>那么对于第一个命令 <code>find . -name '*.py' |grep test</code>，是将前面命令的标准输出作为标准输入传给了 <code>grep test</code>，那么 <code>grep</code> 是从这些标准输入寻找 <code>test</code> 字符，也就是<strong>文件名组成的字符流</strong>。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">find . -name &#39;*.py&#39; |grep test
-</code></pre></td></tr></table>
-</div>
-</div><p>可以看到最终选择出的是这些文件名：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">./Altitest.py
-./test.py
-</code></pre></td></tr></table>
-</div>
-</div><p>而对于第二个命令 <code>find . -name '*.py' |xargs grep test</code>，通过 <code>xargs</code>，<code>find</code> 得到的文件名成为了<strong>参数</strong>传给后面的 <code>grep</code>，那么这时候这些文件名就是实实在在的<strong>文件标识</strong>，<code>grep</code> 接收后会按正常的使用方式在各文件中搜寻字符串（<strong>内容行</strong>）。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">find . -name &#39;*.py&#39; |xargs grep test
-</code></pre></td></tr></table>
-</div>
-</div><p>结果：</p>
+<p>以下实例我们新建脚本<code>test.sh</code>：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -280,39 +129,191 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">./runora.py:testConn = cx_Oracle.connect(&#39;user/passwd@tns&#39;)
-./runora.py:testCursor = testConn.cursor()
-./runora.py:testCursor.execute(&#34;select * from table&#34;)
-./runora.py:rows = testCursor.fetchall()
-./runora.py:testCursor.close()
-./runora.py:testConn.close()
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
+</span><span class="cp"></span><span class="nb">echo</span> <span class="s2">&#34;Shell 传递参数实例！&#34;</span><span class="p">;</span>
+<span class="nb">echo</span> <span class="s2">&#34;执行的文件名：</span><span class="nv">$0</span><span class="s2">&#34;</span><span class="p">;</span>
+<span class="nb">echo</span> <span class="s2">&#34;第一个参数为：</span><span class="nv">$1</span><span class="s2">&#34;</span><span class="p">;</span>
+<span class="nb">echo</span> <span class="s2">&#34;第二个参数为：</span><span class="nv">$2</span><span class="s2">&#34;</span><span class="p">;</span>
+<span class="nb">echo</span> <span class="s2">&#34;第三个参数为：</span><span class="nv">$3</span><span class="s2">&#34;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>为脚本设置可执行权限，并执行脚本，传递三个参数，输出结果如下所示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">chmod +x test.sh 
+./test.sh 1 2 3
+&gt;&gt;&gt;
+Shell 传递参数实例！
+执行的文件名：./test.sh
+第一个参数为：1
+第二个参数为：2
+第三个参数为：3
+</code></pre></td></tr></table>
+</div>
+</div><p>其他参数说明：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>$#</code></td>
+<td align="left">传递到脚本的<strong>参数个数</strong></td>
+</tr>
+<tr>
+<td align="center"><code>$*</code></td>
+<td align="left">以一个单字符串显示向脚本传递的<strong>所有参数</strong>。 如&quot;<code>$*</code>&quot;用<code>&quot;</code>括起来的情况、以&quot;<code>$1 $2 … $n</code>&quot;的形式输出所有参数。</td>
+</tr>
+<tr>
+<td align="center"><code>$$</code></td>
+<td align="left">脚本运行的<strong>当前进程</strong><code>ID</code>号</td>
+</tr>
+<tr>
+<td align="center"><code>$!</code></td>
+<td align="left">后台运行的<strong>最后一个进程</strong>的<code>ID</code>号</td>
+</tr>
+<tr>
+<td align="center"><code>$@</code></td>
+<td align="left">与<code>$*</code>相同，但是使用时加引号，并在引号中返回每个参数。 如<code>&quot;$@&quot;</code>用<code>&quot;</code>括起来的情况、以<code>&quot;$1&quot; &quot;$2&quot; … &quot;$n&quot;</code> 的形式输出所有参数。</td>
+</tr>
+<tr>
+<td align="center"><code>$-</code></td>
+<td align="left">显示Shell使用的当前选项，与<code>set</code>命令功能相同。</td>
+</tr>
+<tr>
+<td align="center"><code>$?</code></td>
+<td align="left">获取函数返回值或者上<strong>一个命令的退出状态</strong>。0表示没有错误，其他任何值表明有错误。</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
+</span><span class="cp"></span><span class="nb">echo</span> <span class="s2">&#34;Shell 传递参数实例！&#34;</span><span class="p">;</span>
+<span class="nb">echo</span> <span class="s2">&#34;第一个参数为：</span><span class="nv">$1</span><span class="s2">&#34;</span><span class="p">;</span>
+<span class="nb">echo</span> <span class="s2">&#34;参数个数为：</span><span class="nv">$#</span><span class="s2">&#34;</span><span class="p">;</span>
+<span class="nb">echo</span> <span class="s2">&#34;传递的参数作为一个字符串显示：</span><span class="nv">$*</span><span class="s2">&#34;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>执行脚本，输出结果如下所示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ chmod +x test.sh 
+$ ./test.sh 1 2 3
+&gt;&gt;&gt;
+Shell 传递参数实例！
+第一个参数为：1
+参数个数为：3
+传递的参数作为一个字符串显示：1 2 3
+</code></pre></td></tr></table>
+</div>
+</div><p><code>$*</code> 与 <code>$@</code> 区别：</p>
+<ul>
+<li>相同点：都是引用所有参数。</li>
+<li>不同点：只有在双引号中体现出来。假设在脚本运行时写了三个参数 1、2、3，，则 <code>$*</code> 等价于 <code>&quot;1 2 3&quot;</code>（传递了一个参数），而 <code>$@</code> 等价于 <code>&quot;1&quot; &quot;2&quot; &quot;3&quot;</code>（传递了三个参数）。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
+</span><span class="cp"></span><span class="nb">echo</span> <span class="s2">&#34;-- \$* 演示 ---&#34;</span>
+<span class="k">for</span> i in <span class="s2">&#34;</span><span class="nv">$*</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">do</span>
+    <span class="nb">echo</span> <span class="nv">$i</span>
+<span class="k">done</span>
+
+<span class="nb">echo</span> <span class="s2">&#34;-- \$@ 演示 ---&#34;</span>
+<span class="k">for</span> i in <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">do</span>
+    <span class="nb">echo</span> <span class="nv">$i</span>
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>执行脚本，输出结果如下所示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ chmod +x test.sh 
+$ ./test.sh 1 2 3
+-- $* 演示 ---
+1 2 3
+-- $@ 演示 ---
+1
+2
+3
 </code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2020-09-02</span>
+                <span>更新于 2020-09-03</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://bigsmallwhite.github.io/linux-xargs/" data-title="Linux-xargs命令" data-hashtags="Linux"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://bigsmallwhite.github.io/linux-xargs/" data-hashtag="Linux"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://bigsmallwhite.github.io/linux-xargs/" data-title="Linux-xargs命令"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://bigsmallwhite.github.io/linux-xargs/" data-title="Linux-xargs命令"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://bigsmallwhite.github.io/linux-xargs/" data-title="Linux-xargs命令"><i class="fab fa-weibo fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://bigsmallwhite.github.io/shell%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/" data-title="shell传递参数" data-hashtags="shell"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://bigsmallwhite.github.io/shell%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/" data-hashtag="shell"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://bigsmallwhite.github.io/shell%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/" data-title="shell传递参数"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://bigsmallwhite.github.io/shell%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/" data-title="shell传递参数"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://bigsmallwhite.github.io/shell%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/" data-title="shell传递参数"><i class="fab fa-weibo fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux/">Linux</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/shell/">shell</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/linux-grep/" class="prev" rel="prev" title="Linux-grep命令"><i class="fas fa-angle-left fa-fw"></i>Linux-grep命令</a>
-            <a href="/shell%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/" class="next" rel="next" title="shell传递参数">shell传递参数<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/linux-xargs/" class="prev" rel="prev" title="Linux-xargs命令"><i class="fas fa-angle-left fa-fw"></i>Linux-xargs命令</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

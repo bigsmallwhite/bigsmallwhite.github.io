@@ -4,7 +4,14 @@
         <link>https://bigsmallwhite.github.io/categories/%E5%AD%A6%E4%B9%A0/</link>
         <description>学习 - 分类 - LoveY Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2904158746@qq.com (dll)</managingEditor>
-            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 02 Sep 2020 10:59:55 &#43;0800</lastBuildDate><atom:link href="https://bigsmallwhite.github.io/categories/%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 03 Sep 2020 10:59:55 &#43;0800</lastBuildDate><atom:link href="https://bigsmallwhite.github.io/categories/%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+    <title>shell传递参数</title>
+    <link>https://bigsmallwhite.github.io/shell%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/</link>
+    <pubDate>Thu, 03 Sep 2020 10:59:55 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://bigsmallwhite.github.io/shell%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/</guid>
+    <description><![CDATA[Shell传递参数学习……]]></description>
+</item><item>
     <title>Linux-xargs命令</title>
     <link>https://bigsmallwhite.github.io/linux-xargs/</link>
     <pubDate>Wed, 02 Sep 2020 10:59:55 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://bigsmallwhite.github.io/%E5%AE%9E%E7%8E%B0%E9%80%86%E5%BA%8F%E6%A0%88/</guid>
     <description><![CDATA[只能用递归实现栈的逆序……]]></description>
-</item><item>
-    <title>单调栈</title>
-    <link>https://bigsmallwhite.github.io/%E5%8D%95%E8%B0%83%E6%A0%88/</link>
-    <pubDate>Sun, 23 Aug 2020 23:03:51 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://bigsmallwhite.github.io/%E5%8D%95%E8%B0%83%E6%A0%88/</guid>
-    <description><![CDATA[单调栈的理解和实现……]]></description>
 </item></channel>
 </rss>
