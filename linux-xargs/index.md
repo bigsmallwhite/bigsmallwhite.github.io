@@ -3,7 +3,7 @@
 
 <!--more-->
 
-> 对 `find`，`xargs`，`grep` 和`|`的一些总结。[参考文章](http://fatmouse.xyz/2016/05/10/2016-05-10-find-grep-xargs-and-pipe/)
+> 对 `find`，`xargs`，`grep` 和`|`的一些总结。[参考文献](http://fatmouse.xyz/2016/05/10/2016-05-10-find-grep-xargs-and-pipe/)
 
 - `xargs` 是给命令传递参数的一个过滤器，也是组合多个命令的一个工具。
 - `xargs` 可以将管道或标准输入`（stdin）`数据转换成命令行参数，也能够从文件的输出中读取数据。
