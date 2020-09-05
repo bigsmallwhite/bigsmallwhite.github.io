@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Linux查看系统进程 - LoveY Blog</title><meta name="Description" content="Linux如何查看系统进程……"><meta property="og:title" content="Linux查看系统进程" />
+<meta property="og:description" content="Linux如何查看系统进程……" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bigsmallwhite.github.io/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/" />
+<meta property="og:image" content="https://bigsmallwhite.github.io/logo.png"/>
+<meta property="article:published_time" content="2020-08-31T10:59:55+08:00" />
+<meta property="article:modified_time" content="2020-08-31T10:59:55+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://bigsmallwhite.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Linux查看系统进程"/>
+<meta name="twitter:description" content="Linux如何查看系统进程……"/>
+<meta name="application-name" content="LoveY">
+<meta name="apple-mobile-web-app-title" content="LoveY"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bigsmallwhite.github.io/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/" /><link rel="prev" href="https://bigsmallwhite.github.io/linux%E4%B8%AD%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Linux查看系统进程",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/bigsmallwhite.github.io\/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/bigsmallwhite.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "Linux","wordcount":  2282 ,
+        "url": "https:\/\/bigsmallwhite.github.io\/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B\/","datePublished": "2020-08-31T10:59:55+08:00","dateModified": "2020-08-31T10:59:55+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/bigsmallwhite.github.io\/images\/avatar.png",
+                    "width":  959 ,
+                    "height":  959 
+                }},"author": {
+                "@type": "Person",
+                "name": "Dll"
+            },"description": "Linux如何查看系统进程……"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="LoveY Blog">LoveY<span class="header-title-post"><i class='far fa-kiss-wink-heart fa-fw'></i></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/" title="所有文章"><i class='fa fa-book'></i> 文章 </a><a class="menu-item" href="/tags/" title="文章标签"><i class='fa fa-bookmark'></i> 标签 </a><a class="menu-item" href="/categories/" title="文章分类"><i class='fa fa-th-list'></i> 分类 </a><a class="menu-item" href="/categories/logs/" title="所有日志"><i class='fa fa-coffee'></i> 日志 </a><a class="menu-item" href="/about/" title="关于博客"><i class='fa fa-heart'></i> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="LoveY Blog">LoveY<span class="header-title-post"><i class='far fa-kiss-wink-heart fa-fw'></i></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="所有文章"><i class='fa fa-book'></i>文章</a><a class="menu-item" href="/tags/" title="文章标签"><i class='fa fa-bookmark'></i>标签</a><a class="menu-item" href="/categories/" title="文章分类"><i class='fa fa-th-list'></i>分类</a><a class="menu-item" href="/categories/logs/" title="所有日志"><i class='fa fa-coffee'></i>日志</a><a class="menu-item" href="/about/" title="关于博客"><i class='fa fa-heart'></i>关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Linux查看系统进程</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Dll</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>学习</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-31">2020-08-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2282 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/" class="leancloud_visitors" data-flag-title="Linux查看系统进程">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#ps命令">ps命令</a></li>
+            <li><a href="#top命令">top命令</a></li>
+            <li><a href="#htop命令">htop命令</a></li>
+            <li><a href="#pstree命令">pstree命令</a></li>
+            <li><a href="#优化使用">优化使用</a>
+              <ul>
+                <li><a href="#1-grep">1-grep</a></li>
+                <li><a href="#2-pgrep">2-pgrep</a></li>
+                <li><a href="#3-pidof">3-pidof</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>进程是在 <code>CPU</code> 及内存中运行的程序代码，而每个进程可以创建一个或多个进程（父子进程）</p>
+</blockquote>
+<p>在<code>linux</code>中可能不明显，但是<code>windows</code>系统中的<strong>任务管理器</strong>大家应该都很熟悉：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="index.zh-cn.assets/1599294435485.png"
+        data-srcset="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599294435485.png, index.zh-cn.assets/1599294435485.png 1.5x, /linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599294435485.png 2x"
+        data-sizes="auto"
+        alt="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599294435485.png"
+        title="1599294435485" /></p>
+<p>在<code>linux</code>中查看系统进程的命令有不少，以下是一些常用命令。</p>
+<h4 id="ps命令">ps命令</h4>
+<blockquote>
+<p><code>ps (process status)</code> 命令是 <code>Linux</code> 下最常用的进程查看工具。使用该命令可以确定哪些进程正在运行和运行的状态、进程是否结束、有没有僵尸进程、哪些进程占用了过多的资源等等。</p>
+<p>注意：<code>ps</code> 命令工具显示的是进程的<strong>瞬间状态</strong>（相当于截图），并不是动态连续显示。</p>
+</blockquote>
+<p>主要的参数：<code>[aux]</code></p>
+<ul>
+<li><code>a</code>：显示当前终端下的所有进程信息，包括其他用户的进程。</li>
+<li><code>u</code>：使用以用户为主的格式输出进程信息。</li>
+<li><code>x</code>：显示当前用户在所有终端下的进程。</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="index.zh-cn.assets/1599306031621.png"
+        data-srcset="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599306031621.png, index.zh-cn.assets/1599306031621.png 1.5x, /linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599306031621.png 2x"
+        data-sizes="auto"
+        alt="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599306031621.png"
+        title="1599306031621" /></p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>字段解释<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><code>USER</code>：启动该进程的用户账号名称</li>
+<li><code>PID</code>：该进程的 唯一<code>ID</code> 号</li>
+<li><code>%CPU</code>：<code>CPU</code> 占用的百分比</li>
+<li><code>%MEM</code>：内存占用的百分比</li>
+<li><code>VSZ</code>：占用虚拟内存（<code>swap</code> 空间）的大小</li>
+<li><code>RSS</code>：占用常驻内存（物理内存）的大小</li>
+<li><code>TTY 或 TT</code>：表示该进程在哪个终端上运行。不是从终端启动的进程或与终端机无关的进程则显示为 <code>？</code></li>
+<li><code>STAT</code>：显示了进程当前的状态。如以下：
+<ul>
+<li><code>D</code> 不可中断的休眠。通常是 <code>IO</code>。</li>
+<li><code>R</code> 运行。正在运行或者在运行队列中等待。</li>
+<li><code>S</code> 休眠。在等待某个事件，信号。</li>
+<li><code>T</code> 停止。进程接收到信息 <code>SIGSTOP，SIGSTP，SIGTIN，SIGTOU</code> 信号。</li>
+<li><code>X</code> 死掉的进程，不应该出现。</li>
+<li><code>Z</code> 僵死进程。对发现处于僵死状态的进程应予以手动终止。</li>
+<li>通常还会跟随如下字母表示更详细的状态：
+<ul>
+<li><code>&lt;</code> 高优先级</li>
+<li><code>N</code> 低优先级</li>
+<li><code>L</code> 有 <code>pages</code> 在内存中 <code>locked</code>。用于实时或者自定义 <code>IO</code>。</li>
+<li><code>s</code> 进程领导者，其有子进程。</li>
+<li><code>l</code> 多线程</li>
+<li><code>+</code>位于前台进程组</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>START</code>：启动该进程的时间</li>
+<li><code>TIME</code>：该进程占用 <code>CPU</code> 时间</li>
+<li><code>COMMAND</code>：启动该进程的命令的名称</li>
+</ul>
+<p>总结：<code>ps aux</code> 是以简单列表的形式显示出进程信息。</div>
+        </div>
+    </div>
+<p>此外，还有另外一种方式：<code>-[elf]</code></p>
+<ul>
+<li><code>-e</code>：显示系统内的所有进程信息。</li>
+<li><code>-l</code>：使用长（long）格式显示进程信息。</li>
+<li><code>-f</code>：使用完整的（full）格式显示进程信息。</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="index.zh-cn.assets/1599304258798.png"
+        data-srcset="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599304258798.png, index.zh-cn.assets/1599304258798.png 1.5x, /linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599304258798.png 2x"
+        data-sizes="auto"
+        alt="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599304258798.png"
+        title="1599304258798" /></p>
+<p><code>PPID</code> 为父进程的 <code>PID</code></p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>两种方式的对比<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p><code>ps -ef</code> 是用标准的格式显示进程，显示的项目有：<code>UID, PID, PPID, C, STIME, TTY, TIME, CMD</code> 字段</p>
+<p><code>ps aux</code> 是用 <code>BSD</code> 的格式来显示进程，显示的项目有：<code>USER, PID, % CPU, %MEM, VSZ, RSS, TTY, STAT, START, TIME, COMMAND </code>
+字段</p>
+<p>所示：</p>
+<ol>
+<li><strong>如果想查看进程的 <code>CPU</code> 占用率和内存占用率，可以使用 <code>aux</code></strong></li>
+<li><strong>如果想查看进程的父进程 <code>ID</code> 和完整的 <code>COMMAND</code> 命令，可以使用 <code>-ef</code></strong></li>
+</ol>
+</div>
+        </div>
+    </div>
+<h4 id="top命令">top命令</h4>
+<blockquote>
+<p>以全屏交互式的界面显示进程排名，及时跟踪包括 CPU、内存等系统资源占用情况，默认情况下每三秒刷新一次，其作用基本类似于 <strong>Windows 系统中的任务管理器</strong>。</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="index.zh-cn.assets/1599304568321.png"
+        data-srcset="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599304568321.png, index.zh-cn.assets/1599304568321.png 1.5x, /linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599304568321.png 2x"
+        data-sizes="auto"
+        alt="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599304568321.png"
+        title="1599304568321" /></p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>字段解释<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><code>Tasks</code>（系统任务）信息：
+<ul>
+<li><code>total</code>：总进程数；</li>
+<li><code>running</code>：正在运行的进程数；</li>
+<li><code>sleeping</code>：休眠的进程数；</li>
+<li><code>stopped</code>：中止的进程数；</li>
+<li><code>zombie</code>：僵死无响应的进程数。</li>
+</ul>
+</li>
+<li><code>CPU</code> 信息：
+<ul>
+<li><code>us</code>：用户占用；</li>
+<li><code>sy</code>：内核占用；</li>
+<li><code>ni</code>：优先级调度占用；</li>
+<li><code>id</code>：空闲 <code>CPU</code>；</li>
+<li><code>wa</code>：I/O 等待占用；</li>
+<li><code>hi</code>：硬件中断占用；</li>
+<li><code>si</code>：软件中断占用；</li>
+<li><code>st</code>：虚拟化占用。</li>
+</ul>
+</li>
+<li><code>Mem</code>（内存）信息：
+<ul>
+<li><code>total</code>：总内存空间；</li>
+<li><code>used</code>：已用内存；</li>
+<li><code>free</code>：空闲内存；</li>
+<li><code>buffers</code>：缓存区域。</li>
+</ul>
+</li>
+<li><code>Swap</code>（交换空间）信息：
+<ul>
+<li><code>total</code>：总交换空间；</li>
+<li><code>used</code>：已用交换空间；</li>
+<li><code>free</code>：空闲交换空间；</li>
+<li><code>cached</code>：缓存空间。</li>
+</ul>
+</li>
+</ul>
+<p><strong>了解空闲的 <code>CPU</code> 百分比，主要看 <code>% id</code> 部分。</strong></div>
+        </div>
+    </div>
+<h4 id="htop命令">htop命令</h4>
+<blockquote>
+<p><code>htop</code> 与 <code>top</code> 很类似，但是 <code>htop</code> 是交互式的文本模式的进程查看器。它通过文字图形化地显示每一个进程的 <code>CPU</code> 和内存使用量、<code>swap</code> 使用量。使用上下光标键选择进程，<code>F7</code> 和 <code>F8</code> 改变优先级，<code>F9</code> 杀死进程。</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="index.zh-cn.assets/1599305248955.png"
+        data-srcset="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599305248955.png, index.zh-cn.assets/1599305248955.png 1.5x, /linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599305248955.png 2x"
+        data-sizes="auto"
+        alt="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599305248955.png"
+        title="1599305248955" /></p>
+<h4 id="pstree命令">pstree命令</h4>
+<blockquote>
+<p><code>linux</code> 中，每一个进程都是由其父进程创建的。此命令以可视化方式显示进程，通过显示进程的树状图来展示进程间关系。</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="index.zh-cn.assets/1599305367171.png"
+        data-srcset="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599305367171.png, index.zh-cn.assets/1599305367171.png 1.5x, /linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599305367171.png 2x"
+        data-sizes="auto"
+        alt="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599305367171.png"
+        title="1599305367171" /></p>
+<p>可用参数：</p>
+<ul>
+<li><code>-a</code>：显示每个程序的完整指令，包含路径，参数或是常驻服务的标示；</li>
+<li><code>-c</code>：不使用精简标示法；</li>
+<li><code>-G</code>：使用 VT100 终端机的列绘图字符；</li>
+<li><code>-h</code>：列出树状图时，特别标明现在执行的程序；</li>
+<li><code>-H</code> &lt;程序识别码&gt;：此参数的效果和指定 &ldquo;-h&rdquo; 参数类似，但特别标明指定的程序；</li>
+<li><code>-l</code>：采用长列格式显示树状图；</li>
+<li><code>-n</code>：用程序识别码排序。预设是以程序名称来排序；</li>
+<li><code>-p</code>：显示程序识别码；</li>
+<li><code>-u</code>：显示用户名称；</li>
+</ul>
+<h4 id="优化使用">优化使用</h4>
+<p>在实际的使用过程中，单纯上述命令的返回结果真的是让人看的眼都花了……</p>
+<p>其实我们根本不需要那么详细或者那么全面的进程信息，可能我们只在意<strong>某个进程的某个信息</strong>……</p>
+<h5 id="1-grep">1-grep</h5>
+<p>使用管道符<code>|</code>配合<code>grep</code>字符串匹配，定位到含有特定字符的进程</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ps aux | grep ubuntu
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="index.zh-cn.assets/1599307796498.png"
+        data-srcset="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599307796498.png, index.zh-cn.assets/1599307796498.png 1.5x, /linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599307796498.png 2x"
+        data-sizes="auto"
+        alt="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599307796498.png"
+        title="1599307796498" /></p>
+<p>可通过<code>kill -s 9 [pid]</code>强制杀死进程。</p>
+<h5 id="2-pgrep">2-pgrep</h5>
+<p><code>pgrep</code> 的 <code>p</code> 表明了这个命令是专门用于进程查询的 <code>grep</code>，<code>pgrep</code> 是通过程序的名字来查询进程的工具，一般是用来判断程序是否正在运行。</p>
+<p>参数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">--help 
+	显示帮助文档
+--version 
+	显示命令版本
+-d delimiter
+	设置用于分隔输出中每个进程ID的字符串(默认为换行符)。(仅限于pgrep)
+-f
+	查找完成的文件名
+-g pgrp
+	只匹配列出的进程组ID中的进程。进程组0被转换为pgrep或pkill自己的进程组。
+-G gid
+	只匹配实际组ID列出的进程。可以使用数值或符号值。
+-l
+	列出进程的名字和id
+-n
+	选择最近执行的进程
+-o
+	选择最早的进程
+-P ppid
+	选择父pid匹配的进程
+-s sid
+	只匹配进程会话ID列出的进程。会话ID 0被转换为pgrep或pkill自己的会话ID。
+-t term
+	查找符合终端号的进程
+-u euid
+	只匹配其有效用户ID列出的进程。
+-U uid
+	只匹配实际用户ID列出的进程。可以使用数值或符号值。
+-v
+	查找不符合条件的进程
+-x
+	只匹配其名称(如果-f指定了命令行)与模式完全匹配的进程。
+</code></pre></td></tr></table>
+</div>
+</div><p>如列出进程的<code>名字和 id</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pgrep -l bash
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="index.zh-cn.assets/1599308237817.png"
+        data-srcset="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599308237817.png, index.zh-cn.assets/1599308237817.png 1.5x, /linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599308237817.png 2x"
+        data-sizes="auto"
+        alt="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599308237817.png"
+        title="1599308237817" /></p>
+<h5 id="3-pidof">3-pidof</h5>
+<p>直接查询某个进程的<code>pid</code>，但是需要知道进程的全名</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="index.zh-cn.assets/1599308421086.png"
+        data-srcset="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599308421086.png, index.zh-cn.assets/1599308421086.png 1.5x, /linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599308421086.png 2x"
+        data-sizes="auto"
+        alt="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/index.zh-cn.assets/1599308421086.png"
+        title="1599308421086" /></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-08-31</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://bigsmallwhite.github.io/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/" data-title="Linux查看系统进程" data-hashtags="Linux"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://bigsmallwhite.github.io/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/" data-hashtag="Linux"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://bigsmallwhite.github.io/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/" data-title="Linux查看系统进程"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://bigsmallwhite.github.io/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/" data-title="Linux查看系统进程"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://bigsmallwhite.github.io/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/" data-title="Linux查看系统进程"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux/">Linux</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/linux%E4%B8%AD%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7/" class="prev" rel="prev" title="Linux中的&amp;&amp;和&amp;，|和||"><i class="fas fa-angle-left fa-fw"></i>Linux中的&amp;&amp;和&amp;，|和||</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">dll</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{"valine":{"appId":"HkjwjqbvBuR9wDB5nCMVD4xL-gzGzoHsz","appKey":"Vz2O6Q0k6kQdfaulv7whvyF9","avatar":"wavatar","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论……","recordIP":true,"visitor":true}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

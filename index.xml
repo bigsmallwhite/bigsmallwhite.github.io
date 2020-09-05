@@ -4,9 +4,16 @@
         <link>https://bigsmallwhite.github.io/</link>
         <description>LoveY的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2904158746@qq.com (dll)</managingEditor>
-            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 30 Aug 2020 10:59:55 &#43;0800</lastBuildDate>
+            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 31 Aug 2020 10:59:55 &#43;0800</lastBuildDate>
             <atom:link href="https://bigsmallwhite.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Linux查看系统进程</title>
+    <link>https://bigsmallwhite.github.io/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/</link>
+    <pubDate>Mon, 31 Aug 2020 10:59:55 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://bigsmallwhite.github.io/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/</guid>
+    <description><![CDATA[Linux如何查看系统进程……]]></description>
+</item><item>
     <title>Linux中的&amp;&amp;和&amp;，|和||</title>
     <link>https://bigsmallwhite.github.io/linux%E4%B8%AD%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7/</link>
     <pubDate>Sun, 30 Aug 2020 10:59:55 &#43;0800</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://bigsmallwhite.github.io/%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
     <description><![CDATA[Python实现最大二叉树……]]></description>
-</item><item>
-    <title>对称、合并、翻转二叉树二叉树</title>
-    <link>https://bigsmallwhite.github.io/%E5%AF%B9%E7%A7%B0%E5%90%88%E5%B9%B6%E7%BF%BB%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
-    <pubDate>Fri, 21 Aug 2020 23:03:51 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://bigsmallwhite.github.io/%E5%AF%B9%E7%A7%B0%E5%90%88%E5%B9%B6%E7%BF%BB%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
-    <description><![CDATA[Python实现两个二叉树的对称、合并、翻转……]]></description>
 </item></channel>
 </rss>
