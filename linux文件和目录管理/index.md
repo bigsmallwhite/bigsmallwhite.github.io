@@ -58,6 +58,20 @@ source ./.bashrc
 
 {{< /admonition >}}
 
+{{< admonition note "重启颜色失效解决办法" >}}
+
+重启后颜色显示失效，说明没有自动加载`.bashrc`文件，先打开`.bash_profile`文件：`vim ~/.bash_profile` 
+
+添加如下代码即可
+
+```shell
+if test -f .bashrc ; then  # 测试.bashrc存在且为普通文件则为真
+source .bashrc
+fi
+```
+
+{{< /admonition >}}
+
 ### cd (切换目录)
 
 > cd是Change Directory的缩写，这是用来变换工作目录的命令。
