@@ -5,35 +5,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Linux-grep命令 - LoveY Blog</title><meta name="Description" content="Linux-grep命令学习……"><meta property="og:title" content="Linux-grep命令" />
-<meta property="og:description" content="Linux-grep命令学习……" />
+        <title>Linux-xargs命令 - LoveY Blog</title><meta name="Description" content="Linux-xargs、find、grep深入理解……"><meta property="og:title" content="Linux-xargs命令" />
+<meta property="og:description" content="Linux-xargs、find、grep深入理解……" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://bigsmallwhite.github.io/linux-grep/" />
+<meta property="og:url" content="https://bigsmallwhite.github.io/linux-xargs/" />
 <meta property="og:image" content="https://bigsmallwhite.github.io/logo.png"/>
-<meta property="article:published_time" content="2020-09-01T10:59:55+08:00" />
-<meta property="article:modified_time" content="2020-09-01T10:59:55+08:00" />
+<meta property="article:published_time" content="2020-09-02T10:59:55+08:00" />
+<meta property="article:modified_time" content="2020-09-02T10:59:55+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://bigsmallwhite.github.io/logo.png"/>
 
-<meta name="twitter:title" content="Linux-grep命令"/>
-<meta name="twitter:description" content="Linux-grep命令学习……"/>
+<meta name="twitter:title" content="Linux-xargs命令"/>
+<meta name="twitter:description" content="Linux-xargs、find、grep深入理解……"/>
 <meta name="application-name" content="LoveY">
-<meta name="apple-mobile-web-app-title" content="LoveY"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bigsmallwhite.github.io/linux-grep/" /><link rel="prev" href="https://bigsmallwhite.github.io/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/" /><link rel="next" href="https://bigsmallwhite.github.io/linux-xargs/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="LoveY"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bigsmallwhite.github.io/linux-xargs/" /><link rel="prev" href="https://bigsmallwhite.github.io/linux-grep/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Linux-grep命令",
+        "headline": "Linux-xargs命令",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/bigsmallwhite.github.io\/linux-grep\/"
+            "@id": "https:\/\/bigsmallwhite.github.io\/linux-xargs\/"
         },"image": [{
                             "@type": "ImageObject",
                             "url": "https:\/\/bigsmallwhite.github.io\/images\/Apple-Devices-Preview.png",
                             "width":  3200 ,
                             "height":  2048 
-                        }],"genre": "posts","keywords": "Linux","wordcount":  1734 ,
-        "url": "https:\/\/bigsmallwhite.github.io\/linux-grep\/","datePublished": "2020-09-01T10:59:55+08:00","dateModified": "2020-09-01T10:59:55+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                        }],"genre": "posts","keywords": "Linux","wordcount":  1293 ,
+        "url": "https:\/\/bigsmallwhite.github.io\/linux-xargs\/","datePublished": "2020-09-02T10:59:55+08:00","dateModified": "2020-09-02T10:59:55+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
                     "@type": "ImageObject",
@@ -43,7 +43,7 @@
                 }},"author": {
                 "@type": "Person",
                 "name": "Dll"
-            },"description": "Linux-grep命令学习……"
+            },"description": "Linux-xargs、find、grep深入理解……"
     }
     </script></head>
     <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -112,10 +112,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Linux-grep命令</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">Linux-xargs命令</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Dll</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>学习</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-01">2020-09-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1734 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/linux-grep/" class="leancloud_visitors" data-flag-title="Linux-grep命令">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-02">2020-09-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1293 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/linux-xargs/" class="leancloud_visitors" data-flag-title="Linux-xargs命令">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -129,10 +129,15 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#语法">语法</a></li>
-            <li><a href="#参数">参数</a></li>
-            <li><a href="#实例">实例</a></li>
-            <li><a href="#grep对比find">grep对比find</a></li>
+            <li>
+              <ul>
+                <li><a href="#问题">问题</a></li>
+                <li><a href="#参数与标准输入">参数与标准输入</a></li>
+                <li><a href="#管道">管道</a></li>
+                <li><a href="#xargs-命令">xargs 命令</a></li>
+                <li><a href="#find-与-grep">find 与 grep</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -140,190 +145,161 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><blockquote>
-<p>Linux <code>grep</code> 命令用于查找文件里符合条件的字符串。</p>
+<p>对 <code>find</code>，<code>xargs</code>，<code>grep</code> 和<code>|</code>的一些总结。<a href="http://fatmouse.xyz/2016/05/10/2016-05-10-find-grep-xargs-and-pipe/" target="_blank" rel="noopener noreffer">参考文章</a></p>
 </blockquote>
-<p><code>grep</code> 指令用于查找内容包含指定的范本样式的文件，如果发现某文件的内容符合所指定的范本样式，预设 <code>grep</code> 指令会把含有范本样式的那一列显示出来。若不指定任何文件名称，或是所给予的文件名为 <code>-</code>，则 <code>grep</code> 指令会从标准输入设备读取数据。</p>
-<h4 id="语法">语法</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">grep [-abcEFGhHilLnqrsvVwxy][-A&lt;显示列数&gt;][-B&lt;显示列数&gt;][-C&lt;显示列数&gt;][-d&lt;进行动作&gt;][-e&lt;范本样式&gt;][-f&lt;范本文件&gt;][--help][范本样式][文件或目录...]
-</code></pre></td></tr></table>
-</div>
-</div><h4 id="参数">参数</h4>
 <ul>
-<li><code>-a 或 --text</code> : 不要忽略二进制的数据。</li>
-<li><code>-A &lt;显示行数&gt; 或 --after-context=&lt; 显示行数 &gt;</code> : 除了显示符合范本样式的那一列之外，并显示该行之后的内容。</li>
-<li><code>-b 或 --byte-offset</code> : 在显示符合样式的那一行之前，标示出该行第一个字符的编号。</li>
-<li><code>-B &lt;显示行数&gt; 或 --before-context=&lt; 显示行数 &gt;</code> : 除了显示符合样式的那一行之外，并显示该行之前的内容。</li>
-<li><code>-c 或 --count</code> : 计算符合样式的列数。</li>
-<li><code>-C &lt;显示行数&gt; 或 --context=&lt; 显示行数 &gt; 或 -&lt; 显示行数 &gt;</code> : 除了显示符合样式的那一行之外，并显示该行之前后的内容。</li>
-<li><code>-d &lt;动作&gt; 或 --directories=&lt; 动作 &gt;</code> : 当指定要查找的是目录而非文件时，必须使用这项参数，否则 grep 指令将回报信息并停止动作。</li>
-<li><code>-e &lt;范本样式&gt; 或 --regexp=&lt; 范本样式 &gt;</code> : 指定字符串做为查找文件内容的样式。</li>
-<li><code>-E 或 --extended-regexp</code> : 将样式为延伸的正则表达式来使用。</li>
-<li><code>-f &lt;规则文件&gt; 或 --file=&lt; 规则文件 &gt;</code> : 指定规则文件，其内容含有一个或多个规则样式，让 <code>grep</code> 查找符合规则条件的文件内容，格式为每行一个规则样式。</li>
-<li><code>-F 或 --fixed-regexp</code> : 将样式视为固定字符串的列表。</li>
-<li><code>-G 或 --basic-regexp</code> : 将样式视为普通的表示法来使用。</li>
-<li><code>-h 或 --no-filename</code> : 在显示符合样式的那一行之前，不标示该行所属的文件名称。</li>
-<li><code>-H 或 --with-filename</code> : 在显示符合样式的那一行之前，表示该行所属的文件名称。</li>
-<li><code>-i 或 --ignore-case</code> : 忽略字符大小写的差别。</li>
-<li><code>-l 或 --file-with-matches</code> : 列出文件内容符合指定的样式的文件名称。</li>
-<li><code>-L 或 --files-without-match</code> : 列出文件内容不符合指定的样式的文件名称。</li>
-<li><code>-n 或 --line-number</code> : 在显示符合样式的那一行之前，标示出该行的列数编号。</li>
-<li><code>-o 或 --only-matching</code> : 只显示匹配 <code>PATTERN</code> 部分。</li>
-<li><code>-q 或 --quiet 或 --silent</code> : 不显示任何信息。</li>
-<li><code>-r 或 --recursive</code> : 此参数的效果和指定<code>-d recurse</code>参数相同。</li>
-<li><code>-s 或 --no-messages</code> : 不显示错误信息。</li>
-<li><code>-v 或 --revert-match</code> : 显示不包含匹配文本的所有行（反向查找）。</li>
-<li><code>-V 或 --version</code> : 显示版本信息。</li>
-<li><code>-w 或 --word-regexp</code> : 只显示全字符合的列。</li>
-<li><code>-x --line-regexp</code> : 只显示全列符合的列。</li>
-<li><code>-y</code> : 此参数的效果和指定<code>-i</code>参数相同。</li>
+<li><code>xargs</code> 是给命令传递参数的一个过滤器，也是组合多个命令的一个工具。</li>
+<li><code>xargs</code> 可以将管道或标准输入<code>（stdin）</code>数据转换成命令行参数，也能够从文件的输出中读取数据。</li>
+<li><code>xargs</code> 也可以将单行或多行文本输入转换为其他格式，例如多行变单行，单行变多行。</li>
+<li><code>xargs</code> 能够捕获一个命令的输出，然后传递给另外一个命令。</li>
+<li><code>xargs</code> 一般是和管道一起使用。</li>
 </ul>
-<h4 id="实例">实例</h4>
-<p>1、在当前目录中，查找后缀有 <code>.txt</code> 字样的文件中包含 <code>hello</code> 字符串的文件，并打印出该字符串的行：</p>
+<h5 id="问题">问题</h5>
+<p>一般在目录中搜索含有固定字符串文件的命令：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">grep -n hello *.txt # -n显示行号
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">find . -name &#39;*.py&#39; |xargs grep test
 </code></pre></td></tr></table>
 </div>
-</div><p>结果如下所示：</p>
-<p><img
+</div><p>刚开始的时候，不熟悉 <code>xargs</code> 命令，大部分人可能直接使用的命令是：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">find . -name &#39;*.py&#39; |grep test
+</code></pre></td></tr></table>
+</div>
+</div><p>结果并不是自己所期望的。此命令只是找出文件名 <code>*.py 有 </code>test` 的情况。</p>
+<p>究竟 <code>xargs</code> 做了什么，使得结果不相同？</p>
+<h5 id="参数与标准输入">参数与标准输入</h5>
+<p>这两个词我们在 <code>Linux</code> 命令中是很常见的。但是参数和标准输入其实是有区别的。</p>
+<p>我们日常使用的很多命令，例如 <code>ls -lah .</code> 中。<code>l</code>， <code>a</code>， <code>h</code> ，<code>.</code> 都是命令 <code>ls</code> 的参数。至于标准输入，<strong>通常来讲标准输入的数据来源就是我们的终端输入</strong>。在 <code>Linux</code> 命令中，有些命令可以接收标准输入，有些是不能的。像上面的 <code>ls</code>，就是只能接收参数，不能接收标准输入。像 <code>cat</code> 命令或 <code>echo</code> 命令，这些是可以的。</p>
+<p>怎么分辨一个命令可不可以接收标准输入？</p>
+<p>很简单，当你敲完命令回车后，终端会等待接收你的输入，例如当你在终端输入 <code>cat</code> 后，终端会等待你输入字符，当你输入一些字符后，然后按 <code>Ctrl-C</code> 发送终止符号。这时 <code>cat</code> 命令接收标准输入完毕，执行命令，也就是将刚才键入的内容输出的标准输出上（屏幕）。</p>
+<h5 id="管道">管道</h5>
+<p>管道的作用是将前面命令的<strong>标准输出</strong>作为后面命令的<strong>标准输入</strong>。这里要注意，后面的命令接收的是标准输入，所以如果命令不支持接收标准输入，那么就不能直接使用管道，例如常用的 <code>ls</code> 命令，只能使用参数，而不能使用标准输入，所以 <code>[command] | ls</code> 是不能使用的。而命令如 <code>echo</code> 或 <code>cat</code> 就可以。有啥方法来实现这些不能使用标准输入的命令与管道结合呢？这时候 <code>xargs</code> 便出场了。</p>
+<h5 id="xargs-命令">xargs 命令</h5>
+<p><code>xargs</code> 命令通俗来讲就是<strong>将标准输入转成各种格式化的参数</strong>，所以命令 <code>[command 1] | xargs [command 2]</code> 就是将 <code>command 1</code> 的标准输出结果，通过管道 <code>|</code> 变成 <code>xargs</code> 的标准输入，然后 <code>xargs</code> 再将此标准输入变成参数，传给 <code>[command 2]</code>。这样一来，通过 <code>xargs</code> 命令，我们便可以在管道后面使用那些不接收标准输入的命令了。例如 <code>[command 1]|xargs ls</code>。</p>
+<p>比如我们通过<code>xargs</code>实现<code>ls-a</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">echo -a | xargs ls
+</code></pre></td></tr></table>
+</div>
+</div><p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="index.zh-cn.assets/1599310063591.png"
-        data-srcset="/linux-grep/index.zh-cn.assets/1599310063591.png, index.zh-cn.assets/1599310063591.png 1.5x, /linux-grep/index.zh-cn.assets/1599310063591.png 2x"
+        data-src="index.zh-cn.assets/1599314292556.png"
+        data-srcset="/linux-xargs/index.zh-cn.assets/1599314292556.png, index.zh-cn.assets/1599314292556.png 1.5x, /linux-xargs/index.zh-cn.assets/1599314292556.png 2x"
         data-sizes="auto"
-        alt="/linux-grep/index.zh-cn.assets/1599310063591.png"
-        title="1599310063591" /></p>
-<p>2、以<strong>递归</strong>的方式查找符合条件的文件。例如，查找指定目录 <code>/etc/acpi</code> 及其子目录（如果存在子目录的话）下所有文件中包含字符串<code>update</code>的文件，并打印出该字符串所在行的内容，使用的命令为：</p>
+        alt="/linux-xargs/index.zh-cn.assets/1599314292556.png"
+        title="1599314292556" /></p>
+<h5 id="find-与-grep">find 与 grep</h5>
+<p>了解以上的知识点，就可以解答最开始的问题</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">grep -r update /etc/acpi 
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">find . -name &#39;*.py&#39; |grep test
 </code></pre></td></tr></table>
 </div>
-</div><p>3、反向查找。前面各个例子是查找并打印出符合条件的行，通过<code>-v</code>参数可以打印出不符合条件行的内容。</p>
-<p>查找文件名中包含<code>.txt</code> 的文件中不包含 <code>hello</code> 的行，此时，使用的命令为：</p>
+</div><p>和</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">grep -v hello *.txt
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">find . -name &#39;*.py&#39; |xargs grep test
 </code></pre></td></tr></table>
 </div>
-</div><p>结果如下所示：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="index.zh-cn.assets/1599310177660.png"
-        data-srcset="/linux-grep/index.zh-cn.assets/1599310177660.png, index.zh-cn.assets/1599310177660.png 1.5x, /linux-grep/index.zh-cn.assets/1599310177660.png 2x"
-        data-sizes="auto"
-        alt="/linux-grep/index.zh-cn.assets/1599310177660.png"
-        title="1599310177660" /></p>
-<p>4、大文件查找。系统报警显示了时间，但是日志文件太大无法直接 <code>cat</code> 查看。(查询含有特定文本的文件，并拿到这些文本所在的行)</p>
-<p>解决：</p>
+</div><p>结果到底为什么不一样。</p>
+<p>我们首先来查看 grep 手册。通过 <code>man grep</code> 命令。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">grep -n <span class="s1">&#39;2019-10-24 00:01:11&#39;</span> *.log
+<pre class="chroma"><code class="language-shell" data-lang="shell">DESCRIPTION grep searches the named input FILEs <span class="o">(</span>or standard input <span class="k">if</span> no files are named, or <span class="k">if</span> a single hyphen-minus <span class="o">(</span>-<span class="o">)</span> is given as file name<span class="o">)</span> <span class="k">for</span> lines containing a match to the given PATTERN.  By default, grep prints the matching lines.
 </code></pre></td></tr></table>
 </div>
-</div><h4 id="grep对比find">grep对比find</h4>
-<p>从文件内容查找匹配指定字符串的行：</p>
+</div><p>这里可以看到 grep 是支持标准输入的。</p>
+<p>假设目录存在如下文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ grep &#34;被查找的字符串&#34; 文件名
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">lsAltitest.py  python.py  runora.py  test.py  TransferFile.py
 </code></pre></td></tr></table>
 </div>
-</div><p>在当前目录里第一级文件夹中寻找包含指定字符串的 .in 文件</p>
+</div><p>那么对于第一个命令 <code>find . -name '*.py' |grep test</code>，是将前面命令的标准输出作为标准输入传给了 <code>grep test</code>，那么 <code>grep</code> 是从这些标准输入寻找 <code>test</code> 字符，也就是<strong>文件名组成的字符流</strong>。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">grep &#34;thermcontact&#34; /.in
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">find . -name &#39;*.py&#39; |grep test
 </code></pre></td></tr></table>
 </div>
-</div><p>从文件内容查找与正则表达式匹配的行：</p>
+</div><p>可以看到最终选择出的是这些文件名：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">./Altitest.py
+./test.py
+</code></pre></td></tr></table>
+</div>
+</div><p>而对于第二个命令 <code>find . -name '*.py' |xargs grep test</code>，通过 <code>xargs</code>，<code>find</code> 得到的文件名成为了<strong>参数</strong>传给后面的 <code>grep</code>，那么这时候这些文件名就是实实在在的<strong>文件标识</strong>，<code>grep</code> 接收后会按正常的使用方式在各文件中搜寻字符串（<strong>内容行</strong>）。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ grep –e &#34;正则表达式&#34; 文件名
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">find . -name &#39;*.py&#39; |xargs grep test
 </code></pre></td></tr></table>
 </div>
-</div><p>查找时不区分大小写：</p>
+</div><p>结果：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ grep –i &#34;被查找的字符串&#34; 文件名
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">./runora.py:testConn = cx_Oracle.connect(&#39;user/passwd@tns&#39;)
+./runora.py:testCursor = testConn.cursor()
+./runora.py:testCursor.execute(&#34;select * from table&#34;)
+./runora.py:rows = testCursor.fetchall()
+./runora.py:testCursor.close()
+./runora.py:testConn.close()
 </code></pre></td></tr></table>
 </div>
-</div><p>查找匹配的行数：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ grep -c &#34;被查找的字符串&#34; 文件名
-</code></pre></td></tr></table>
-</div>
-</div><p>从文件内容查找不匹配指定字符串的行：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ grep –v &#34;被查找的字符串&#34; 文件名
-</code></pre></td></tr></table>
-</div>
-</div><p>从根目录开始查找所有扩展名为 <code>.log</code> 的文本文件，并找出包含 <code>&quot;ERROR&quot;</code> 的行：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ find / -type f -name &#34;*.log&#34; | xargs grep &#34;ERROR&#34;
-</code></pre></td></tr></table>
-</div>
-</div><p>从当前目录开始查找所有扩展名为 <code>.in</code> 的文本文件，并找出包含 <code>&quot;thermcontact&quot;</code> 的行：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">find . -name &#34;*.in&#34; | xargs grep &#34;thermcontact&#34;
-</code></pre></td></tr></table>
-</div>
-</div><p><strong>注：<code>xargs</code>是把左侧的标准输出转化为右侧的格式化参数</strong>，如果没有<code>xargs</code>的作用，那么那么上述两行语句的作用就是在一堆文件名中查找匹配的<strong>文件名</strong>，有了<code>xargs</code>，就是在一堆文件中查找匹配的<strong>内容行</strong>。</p></div><div class="post-footer" id="post-footer">
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2020-09-01</span>
+                <span>更新于 2020-09-02</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://bigsmallwhite.github.io/linux-grep/" data-title="Linux-grep命令" data-hashtags="Linux"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://bigsmallwhite.github.io/linux-grep/" data-hashtag="Linux"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://bigsmallwhite.github.io/linux-grep/" data-title="Linux-grep命令"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://bigsmallwhite.github.io/linux-grep/" data-title="Linux-grep命令"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://bigsmallwhite.github.io/linux-grep/" data-title="Linux-grep命令"><i class="fab fa-weibo fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://bigsmallwhite.github.io/linux-xargs/" data-title="Linux-xargs命令" data-hashtags="Linux"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://bigsmallwhite.github.io/linux-xargs/" data-hashtag="Linux"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://bigsmallwhite.github.io/linux-xargs/" data-title="Linux-xargs命令"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://bigsmallwhite.github.io/linux-xargs/" data-title="Linux-xargs命令"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://bigsmallwhite.github.io/linux-xargs/" data-title="Linux-xargs命令"><i class="fab fa-weibo fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -335,8 +311,7 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/" class="prev" rel="prev" title="Linux查看系统进程"><i class="fas fa-angle-left fa-fw"></i>Linux查看系统进程</a>
-            <a href="/linux-xargs/" class="next" rel="next" title="Linux-xargs命令">Linux-xargs命令<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/linux-grep/" class="prev" rel="prev" title="Linux-grep命令"><i class="fas fa-angle-left fa-fw"></i>Linux-grep命令</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
