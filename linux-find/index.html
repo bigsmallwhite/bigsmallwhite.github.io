@@ -5,35 +5,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Linux中vim的使用 - LoveY Blog</title><meta name="Description" content="Linux中vim命令的一些常用功能……"><meta property="og:title" content="Linux中vim的使用" />
-<meta property="og:description" content="Linux中vim命令的一些常用功能……" />
+        <title>linux-find命令 - LoveY Blog</title><meta name="Description" content="linux如何利用find进行文件查找……"><meta property="og:title" content="linux-find命令" />
+<meta property="og:description" content="linux如何利用find进行文件查找……" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://bigsmallwhite.github.io/linux-vim%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A/" />
+<meta property="og:url" content="https://bigsmallwhite.github.io/linux-find/" />
 <meta property="og:image" content="https://bigsmallwhite.github.io/logo.png"/>
-<meta property="article:published_time" content="2020-08-20T10:59:55+08:00" />
-<meta property="article:modified_time" content="2020-08-20T10:59:55+08:00" />
+<meta property="article:published_time" content="2020-09-05T10:59:55+08:00" />
+<meta property="article:modified_time" content="2020-09-05T10:59:55+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://bigsmallwhite.github.io/logo.png"/>
 
-<meta name="twitter:title" content="Linux中vim的使用"/>
-<meta name="twitter:description" content="Linux中vim命令的一些常用功能……"/>
+<meta name="twitter:title" content="linux-find命令"/>
+<meta name="twitter:description" content="linux如何利用find进行文件查找……"/>
 <meta name="application-name" content="LoveY">
-<meta name="apple-mobile-web-app-title" content="LoveY"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bigsmallwhite.github.io/linux-vim%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A/" /><link rel="prev" href="https://bigsmallwhite.github.io/bfs%E5%92%8Cdfs/" /><link rel="next" href="https://bigsmallwhite.github.io/%E5%AF%B9%E7%A7%B0%E5%90%88%E5%B9%B6%E7%BF%BB%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="LoveY"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bigsmallwhite.github.io/linux-find/" /><link rel="prev" href="https://bigsmallwhite.github.io/shell%E8%BF%90%E7%AE%97%E7%AC%A6/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Linux中vim的使用",
+        "headline": "linux-find命令",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/bigsmallwhite.github.io\/linux-vim%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A\/"
+            "@id": "https:\/\/bigsmallwhite.github.io\/linux-find\/"
         },"image": [{
                             "@type": "ImageObject",
                             "url": "https:\/\/bigsmallwhite.github.io\/images\/Apple-Devices-Preview.png",
                             "width":  3200 ,
                             "height":  2048 
-                        }],"genre": "posts","keywords": "Linux","wordcount":  860 ,
-        "url": "https:\/\/bigsmallwhite.github.io\/linux-vim%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A\/","datePublished": "2020-08-20T10:59:55+08:00","dateModified": "2020-08-20T10:59:55+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                        }],"genre": "posts","keywords": "linux","wordcount":  957 ,
+        "url": "https:\/\/bigsmallwhite.github.io\/linux-find\/","datePublished": "2020-09-05T10:59:55+08:00","dateModified": "2020-09-05T10:59:55+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
                     "@type": "ImageObject",
@@ -43,7 +43,7 @@
                 }},"author": {
                 "@type": "Person",
                 "name": "Dll"
-            },"description": "Linux中vim命令的一些常用功能……"
+            },"description": "linux如何利用find进行文件查找……"
     }
     </script></head>
     <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -112,10 +112,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Linux中vim的使用</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">linux-find命令</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Dll</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>学习</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-20">2020-08-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 860 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/linux-vim%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A/" class="leancloud_visitors" data-flag-title="Linux中vim的使用">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-05">2020-09-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 957 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/linux-find/" class="leancloud_visitors" data-flag-title="linux-find命令">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -129,14 +129,9 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#1三种模式">1、三种模式</a></li>
-            <li><a href="#2进入vim">2、进入vim</a></li>
-            <li><a href="#3退出vim">3、退出vim</a></li>
-            <li><a href="#4移动光标">4、移动光标</a></li>
-            <li><a href="#5输入插入">5、输入（插入）</a></li>
-            <li><a href="#6删除与复制">6、删除与复制</a></li>
-            <li><a href="#7块状操作">7、块状操作</a></li>
-            <li><a href="#8搜索与替换">8、搜索与替换</a></li>
+            <li><a href="#语法"><strong>语法</strong></a></li>
+            <li><a href="#实例"><strong>实例</strong></a></li>
+            <li><a href="#查找包含某字符的文件">查找包含某字符的文件</a></li>
           </ul>
         </li>
       </ul>
@@ -144,185 +139,178 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><blockquote>
-<p>vi和vim都是Linux中的编辑器，不同的是vim比较高级，可以视为vi的升级版本。vi使用于文本编辑，但是vim更适用于coding。</p>
+<p>同学们在面试的时候，不免经常被问到linux如何查询<strong>某目录下包含某字符的文件</strong>，一般可以采用<code>find+xargs+grep</code></p>
 </blockquote>
-<h4 id="1三种模式">1、三种模式</h4>
-<ul>
-<li>命令模式 黄绿色</li>
-<li>插入模式 命令模式下输入 <code>i</code> ，变蓝色 。按<code>ESC</code>退出插入模式，回到命令模式</li>
-<li>行末模式（底线模式） 命令模式下输入 <code>:</code></li>
-</ul>
-<p>三种模式的互相变换如图所示：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="index.zh-cn.assets/Snipaste_2020-08-21_01-00-04.png"
-        data-srcset="/linux-vim%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A/index.zh-cn.assets/Snipaste_2020-08-21_01-00-04.png, index.zh-cn.assets/Snipaste_2020-08-21_01-00-04.png 1.5x, /linux-vim%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A/index.zh-cn.assets/Snipaste_2020-08-21_01-00-04.png 2x"
-        data-sizes="auto"
-        alt="/linux-vim%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A/index.zh-cn.assets/Snipaste_2020-08-21_01-00-04.png"
-        title="Snipaste_2020-08-21_01-00-04" /></p>
-<h4 id="2进入vim">2、进入vim</h4>
-<p><code>vim &lt;文件名&gt;</code> # 进入或创建文件； 所有文件都能用vim打开</p>
-<h4 id="3退出vim">3、退出vim</h4>
-<p>在末行模式下：</p>
-<ul>
-<li><code>:q</code> 退出</li>
-<li><code>:wq</code> 保存并退出</li>
-<li><code>:wq! </code> 强制保存并退出</li>
-<li><code>:q!</code> 强制退出</li>
-</ul>
-<h4 id="4移动光标">4、移动光标</h4>
+<p>Linux <code>find</code> 命令用来在<strong>指定目录下查找文件</strong>。如果使用该命令时，不设置任何参数，则 find 命令将在当前目录下查找子目录与文件，并且将查找到的子目录和文件全部进行显示。</p>
+<h4 id="语法"><strong>语法</strong></h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">    gg,:0 光标转到首行行首
-    G, :$ 光标转到末行行首
-    0    光标移到本行行首
-    $    光标移到本行行尾
-    
-    H    光标定位到屏幕顶部
-    M    光标定位到屏幕中间
-    L    光标定位到屏幕底部
-    ctrl+f 下翻一屏
-    ctrl+b 上翻一屏
-    w    光标向前移动一个单词
-    b    光标向后移动一个单词
-    e    光标移动到当前单词的结尾
+<pre class="chroma"><code class="language-shell" data-lang="shell">find path -option <span class="o">[</span> -print <span class="o">]</span> <span class="o">[</span> -exec -ok <span class="nb">command</span> <span class="o">]</span> <span class="o">{}</span> <span class="se">\
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>参数说明</strong> :</p>
+<p><code>find</code> 根据下列规则判断 <code>path</code> 和 <code>expression</code>，在命令列上第一个 <code>- ( ) , !</code> 之前的部份为 <code>path</code>，之后的是 <code>expression</code>。如果 <code>path</code> 是<strong>空字串则使用当前路径</strong>，如果 <code>expression</code> 是空字串则使用 <code>-print</code> 为预设 <code>expression</code>。</p>
+<p><code>expression</code> 中可使用的选项有二三十个之多，在此只介绍最常用的部份：</p>
+<ul>
+<li>
+<p><code>-mount, -xdev</code> : 只检查和指定目录在同一个文件系统下的文件，避免列出其它文件系统中的文件</p>
+</li>
+<li>
+<p><code>-amin n</code> : 在过去 <code>n</code> 分钟内被读取过</p>
+</li>
+<li>
+<p><code>-anewer file</code> : 比文件 <code>file</code> 更晚被读取过的文件</p>
+</li>
+<li>
+<p><code>-atime n</code> : 在过去 <code>n</code> 天内被读取过的文件</p>
+</li>
+<li>
+<p><code>-cmin n</code> : 在过去 <code>n</code> 分钟内被修改过</p>
+</li>
+<li>
+<p><code>-cnewer file</code> : 比文件 <code>file</code> 更新的文件</p>
+</li>
+<li>
+<p><code>-ctime n</code> : 在过去 <code>n</code> 天内被修改过的文件</p>
+</li>
+<li>
+<p><code>-empty</code> : 空的文件</p>
+</li>
+<li>
+<p><code>- gid n or -group name</code> : <code>gid</code> 是 <code>n</code> 或是 <code>group</code> 名称是 <code>name</code></p>
+</li>
+<li>
+<p><code>-ipath p, -path p</code> : 路径名称符合 <code>p</code> 的文件，<code>ipath</code> 会忽略大小写</p>
+</li>
+<li>
+<p><code>-name name, -iname name</code> : 文件名称符合 <code>name</code> 的文件。<code>iname</code> 会忽略大小写</p>
+</li>
+<li>
+<p><code>-size n</code> : 文件大小 是 <code>n</code> 单位，<code>b</code> 代表 <code>512</code> 位元组的区块，<code>c</code> 表示字元数，<code>k</code> 表示 <code>kilo bytes</code>，<code>w</code> 是二个位元组。</p>
+</li>
+<li>
+<p><code>-type</code> ：文件类型</p>
+<ul>
+<li><code>c</code> : 文件类型是 <code>c</code> 的文件。</li>
+<li><code>d</code>: 目录</li>
+<li><code>c</code>: 字型装置文件</li>
+<li><code>b</code>: 区块装置文件</li>
+<li><code>p</code>: 具名贮列</li>
+<li><code>f</code>: 一般文件</li>
+<li><code>l</code>: 符号连结</li>
+<li><code>s</code>: socket</li>
+</ul>
+</li>
+<li>
+<p><code>-pid n</code> : <code>process id</code> 是 <code>n</code> 的文件</p>
+</li>
+</ul>
+<p>你可以使用 ( ) 将运算式分隔，并使用下列运算。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">exp1 -and exp2
+! expr
+-not expr
+exp1 -or exp2
+exp1, exp2
 </code></pre></td></tr></table>
 </div>
-</div><h4 id="5输入插入">5、输入（插入）</h4>
-<p>命令模式下：</p>
-<ul>
-<li>
-<p><code>i</code> 从光标所在位置前开始插入</p>
-</li>
-<li>
-<p><code>I</code> 在当前非空格行首插入</p>
-</li>
-<li>
-<p><code>a</code> 从光标所在位置后面开始输入</p>
-</li>
-<li>
-<p><code>A</code>在当前行尾还是输入</p>
-</li>
-<li>
-<p><code>o</code> 在光标所在行下方新增一行并输入模式</p>
-</li>
-<li>
-<p><code>O</code> 在当前上面一行插入</p>
-</li>
-</ul>
-<h4 id="6删除与复制">6、删除与复制</h4>
-<p>命令模式下：</p>
-<table>
-<thead>
-<tr>
-<th>命令字符</th>
-<th>介绍</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>dd(双击d)</code></td>
-<td>剪切当前行</td>
-</tr>
-<tr>
-<td><code>num + dd(双击d)</code></td>
-<td>剪切当前行（例如<code>10dd</code>可以删除10行）</td>
-</tr>
-<tr>
-<td><code>yy</code></td>
-<td>拷贝当前行</td>
-</tr>
-<tr>
-<td><code>p</code></td>
-<td>将内容粘贴至光标所示位置</td>
-</tr>
-<tr>
-<td><code>u</code></td>
-<td>撤销</td>
-</tr>
-<tr>
-<td><code>Ctrl+r</code></td>
-<td>反撤销</td>
-</tr>
-</tbody>
-</table>
-<h4 id="7块状操作">7、块状操作</h4>
-<p>命令模式下：</p>
-<ul>
-<li>
-<p><code>v</code> 块选择</p>
-</li>
-<li>
-<p><code>Ctrl+v</code> 列块选择 （输入命令后移动光标选择区域）</p>
-</li>
-<li>
-<p>多行注释 命令模式下：<code>Ctrl+v</code> 选择要注释的行， <code>shift+i</code> ，输入<code>#</code> 然后再按<strong>两次</strong><code>ESC</code></p>
-</li>
-</ul>
-<h4 id="8搜索与替换">8、搜索与替换</h4>
-<p>命令模式下：</p>
-<ul>
-<li>
-<p><code>/</code>内容   向前搜索内容 （向下）</p>
-</li>
-<li>
-<p><code>?</code>内容   向后搜索内容 （向上）</p>
-</li>
-<li>
-<p><code>n</code> 向下查找</p>
-</li>
-<li>
-<p><code>N</code> 向上查找</p>
-</li>
-<li>
-<p><code>:s/s1/s2</code> 替换当前行的第一个<code>s1</code>为<code>s2</code></p>
-</li>
-<li>
-<p><code>:s/s1/s2/g</code> 替换当前行中所有<code>s1</code>为<code>s2</code></p>
-</li>
-<li>
-<p><code>:%s/s1/s2/g</code> 替换文中所有的<code>s1</code>为<code>s2</code></p>
-</li>
-</ul>
-<div class="details admonition note open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-pencil-alt fa-fw"></i>vim搜索设置高亮<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><p>1、临时设置：<code>vim打开文档--&gt;命令行形式输入：set hlsearch</code>。
-缺点：关闭文档后，下次打开，又需要重新设置一遍。</p>
-<p>2、永久设置（推荐）：<code>在~/.vimrc中配制--&gt;vim ~/.vimrc--&gt;在文件中加上set hlsearch--&gt;然后保存退出便可</code>。
-优点：一次设置，永久生效。</p>
+</div><h4 id="实例"><strong>实例</strong></h4>
+<p>将目前目录及其子目录下所有后缀是 <code>c</code> 的文件列出来</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">find . -name <span class="s2">&#34;*.c&#34;</span>
+</code></pre></td></tr></table>
 </div>
-        </div>
-    </div></div><div class="post-footer" id="post-footer">
+</div><p>将目前目录其其下子目录中所有一般文件列出</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">find . -type f
+</code></pre></td></tr></table>
+</div>
+</div><p>将目前目录及其子目录下所有最近 20 天内更新过的文件列出</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">find . -ctime -20
+</code></pre></td></tr></table>
+</div>
+</div><p>查找 <code>/var/log</code> 目录中更改时间在 7 日以前的普通文件，并在删除之前询问它们：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">find /var/log -type f -mtime +7 -ok rm <span class="o">{}</span> <span class="se">\
+</span></code></pre></td></tr></table>
+</div>
+</div><p>查找前目录中文件属主具有读、写权限，并且文件所属组的用户和其他用户具有读权限的文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">find . -type f -perm <span class="m">644</span> -exec ls -l <span class="o">{}</span> <span class="se">\
+</span></code></pre></td></tr></table>
+</div>
+</div><p>为了查找系统中所有文件长度为 0 的普通文件，并列出它们的完整路径：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">find / -type f -size <span class="m">0</span> -exec ls -l <span class="o">{}</span> <span class="se">\
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="查找包含某字符的文件">查找包含某字符的文件</h4>
+<p>查找包含某关键词的所有文件命令如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">find -type f -name <span class="s1">&#39;*&#39;</span> <span class="p">|</span> xargs grep <span class="s1">&#39;关键词&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>查找固定后缀文件，如包含关键词<code>xxx</code>的所有后缀名为<code>.json</code>的文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">find -type f -name <span class="s1">&#39;*.json&#39;</span> <span class="p">|</span> xargs grep <span class="s1">&#39;xxx&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2020-08-20</span>
+                <span>更新于 2020-09-05</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://bigsmallwhite.github.io/linux-vim%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A/" data-title="Linux中vim的使用" data-hashtags="Linux"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://bigsmallwhite.github.io/linux-vim%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A/" data-hashtag="Linux"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://bigsmallwhite.github.io/linux-vim%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A/" data-title="Linux中vim的使用"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://bigsmallwhite.github.io/linux-vim%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A/" data-title="Linux中vim的使用"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://bigsmallwhite.github.io/linux-vim%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A/" data-title="Linux中vim的使用"><i class="fab fa-weibo fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://bigsmallwhite.github.io/linux-find/" data-title="linux-find命令" data-hashtags="linux"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://bigsmallwhite.github.io/linux-find/" data-hashtag="linux"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://bigsmallwhite.github.io/linux-find/" data-title="linux-find命令"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://bigsmallwhite.github.io/linux-find/" data-title="linux-find命令"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://bigsmallwhite.github.io/linux-find/" data-title="linux-find命令"><i class="fab fa-weibo fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -334,8 +322,7 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/bfs%E5%92%8Cdfs/" class="prev" rel="prev" title="BFS和DFS"><i class="fas fa-angle-left fa-fw"></i>BFS和DFS</a>
-            <a href="/%E5%AF%B9%E7%A7%B0%E5%90%88%E5%B9%B6%E7%BF%BB%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91/" class="next" rel="next" title="对称、合并、翻转二叉树二叉树">对称、合并、翻转二叉树二叉树<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/shell%E8%BF%90%E7%AE%97%E7%AC%A6/" class="prev" rel="prev" title="shell运算符"><i class="fas fa-angle-left fa-fw"></i>shell运算符</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

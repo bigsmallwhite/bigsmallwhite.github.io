@@ -2,15 +2,16 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://bigsmallwhite.github.io/categories/</loc><lastmod>2020-09-04T10:59:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://bigsmallwhite.github.io/</loc><lastmod>2020-09-04T10:59:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://bigsmallwhite.github.io/posts/</loc><lastmod>2020-09-04T10:59:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://bigsmallwhite.github.io/categories/</loc><lastmod>2020-09-05T10:59:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://bigsmallwhite.github.io/tags/linux/</loc><lastmod>2020-09-05T10:59:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://bigsmallwhite.github.io/linux-find/</loc><lastmod>2020-09-05T10:59:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://bigsmallwhite.github.io/</loc><lastmod>2020-09-05T10:59:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://bigsmallwhite.github.io/posts/</loc><lastmod>2020-09-05T10:59:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://bigsmallwhite.github.io/tags/</loc><lastmod>2020-09-05T10:59:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://bigsmallwhite.github.io/categories/%E5%AD%A6%E4%B9%A0/</loc><lastmod>2020-09-05T10:59:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://bigsmallwhite.github.io/tags/shell/</loc><lastmod>2020-09-04T10:59:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://bigsmallwhite.github.io/shell%E8%BF%90%E7%AE%97%E7%AC%A6/</loc><lastmod>2020-09-04T10:59:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://bigsmallwhite.github.io/tags/</loc><lastmod>2020-09-04T10:59:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://bigsmallwhite.github.io/categories/%E5%AD%A6%E4%B9%A0/</loc><lastmod>2020-09-04T10:59:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://bigsmallwhite.github.io/shell%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/</loc><lastmod>2020-09-03T10:59:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://bigsmallwhite.github.io/tags/linux/</loc><lastmod>2020-09-02T10:59:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://bigsmallwhite.github.io/linux-xargs/</loc><lastmod>2020-09-02T10:59:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://bigsmallwhite.github.io/linux-grep/</loc><lastmod>2020-09-01T10:59:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://bigsmallwhite.github.io/linux%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B/</loc><lastmod>2020-08-31T10:59:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
