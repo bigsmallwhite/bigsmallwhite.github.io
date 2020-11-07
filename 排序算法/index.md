@@ -13,7 +13,7 @@
 
 用一张图概括：
 
-![总结](index.zh-cn.assets/总结.png)
+{{< image src="index.zh-cn.assets/总结.png" caption="复杂度总结" >}}
 
 #### 关于时间复杂度：
 
