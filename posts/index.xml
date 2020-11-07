@@ -4,7 +4,14 @@
         <link>https://bigsmallwhite.github.io/posts/</link>
         <description>所有文章 | LoveY Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2904158746@qq.com (dll)</managingEditor>
-            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 05 Sep 2020 10:59:55 &#43;0800</lastBuildDate><atom:link href="https://bigsmallwhite.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 06 Sep 2020 10:59:55 &#43;0800</lastBuildDate><atom:link href="https://bigsmallwhite.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>linux-脚本执行命令</title>
+    <link>https://bigsmallwhite.github.io/linux-%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C/</link>
+    <pubDate>Sun, 06 Sep 2020 10:59:55 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://bigsmallwhite.github.io/linux-%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C/</guid>
+    <description><![CDATA[linux执行shell脚本的不同方式……]]></description>
+</item><item>
     <title>linux-find命令</title>
     <link>https://bigsmallwhite.github.io/linux-find/</link>
     <pubDate>Sat, 05 Sep 2020 10:59:55 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://bigsmallwhite.github.io/linux%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/</guid>
     <description><![CDATA[Linux文件和目录管理常用命令……]]></description>
-</item><item>
-    <title>Linux文件属性命令</title>
-    <link>https://bigsmallwhite.github.io/linux%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7%E5%91%BD%E4%BB%A4/</link>
-    <pubDate>Thu, 27 Aug 2020 10:59:55 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://bigsmallwhite.github.io/linux%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7%E5%91%BD%E4%BB%A4/</guid>
-    <description><![CDATA[Linux文件属性命令……]]></description>
 </item></channel>
 </rss>

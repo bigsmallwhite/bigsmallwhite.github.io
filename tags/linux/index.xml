@@ -4,7 +4,14 @@
         <link>https://bigsmallwhite.github.io/tags/linux/</link>
         <description>linux - 标签 - LoveY Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2904158746@qq.com (dll)</managingEditor>
-            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 05 Sep 2020 10:59:55 &#43;0800</lastBuildDate><atom:link href="https://bigsmallwhite.github.io/tags/linux/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>2904158746@qq.com (dll)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 06 Sep 2020 10:59:55 &#43;0800</lastBuildDate><atom:link href="https://bigsmallwhite.github.io/tags/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>linux-脚本执行命令</title>
+    <link>https://bigsmallwhite.github.io/linux-%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C/</link>
+    <pubDate>Sun, 06 Sep 2020 10:59:55 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://bigsmallwhite.github.io/linux-%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C/</guid>
+    <description><![CDATA[linux执行shell脚本的不同方式……]]></description>
+</item><item>
     <title>linux-find命令</title>
     <link>https://bigsmallwhite.github.io/linux-find/</link>
     <pubDate>Sat, 05 Sep 2020 10:59:55 &#43;0800</pubDate>
@@ -67,14 +74,5 @@
     <author>作者</author>
     <guid>https://bigsmallwhite.github.io/linux-vim%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A/</guid>
     <description><![CDATA[Linux中vim命令的一些常用功能……]]></description>
-</item><item>
-    <title>Linux挂载</title>
-    <link>https://bigsmallwhite.github.io/linux%E6%8C%82%E8%BD%BD/</link>
-    <pubDate>Sat, 08 Aug 2020 10:59:55 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://bigsmallwhite.github.io/linux%E6%8C%82%E8%BD%BD/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/featured-image.jpg" referrerpolicy="no-referrer">
-            </div>Linux挂载的解释……]]></description>
 </item></channel>
 </rss>
