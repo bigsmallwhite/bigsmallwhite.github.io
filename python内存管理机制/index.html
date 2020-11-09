@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Python内存管理机制 - LoveY Blog</title><meta name="Description" content="Python具体有哪些内存管理机制……"><meta property="og:title" content="Python内存管理机制" />
+<meta property="og:description" content="Python具体有哪些内存管理机制……" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bigsmallwhite.github.io/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" />
+<meta property="og:image" content="https://bigsmallwhite.github.io/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/featured-image.png"/>
+<meta property="article:published_time" content="2020-09-08T01:49:59+08:00" />
+<meta property="article:modified_time" content="2020-09-08T01:49:59+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://bigsmallwhite.github.io/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/featured-image.png"/>
+<meta name="twitter:title" content="Python内存管理机制"/>
+<meta name="twitter:description" content="Python具体有哪些内存管理机制……"/>
+<meta name="application-name" content="LoveY">
+<meta name="apple-mobile-web-app-title" content="LoveY"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://bigsmallwhite.github.io/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" /><link rel="prev" href="https://bigsmallwhite.github.io/linux-%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Python内存管理机制",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/bigsmallwhite.github.io\/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/bigsmallwhite.github.io\/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6\/featured-image.png",
+                            "width":  1029 ,
+                            "height":  511 
+                        }],"genre": "posts","keywords": "Python","wordcount":  2149 ,
+        "url": "https:\/\/bigsmallwhite.github.io\/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6\/","datePublished": "2020-09-08T01:49:59+08:00","dateModified": "2020-09-08T01:49:59+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/bigsmallwhite.github.io\/images\/avatar.png",
+                    "width":  959 ,
+                    "height":  959 
+                }},"author": {
+                "@type": "Person",
+                "name": "Dll"
+            },"description": "Python具体有哪些内存管理机制……"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="LoveY Blog">LoveY<span class="header-title-post"><i class='far fa-kiss-wink-heart fa-fw'></i></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/" title="所有文章"><i class='fa fa-book'></i> 文章 </a><a class="menu-item" href="/tags/" title="文章标签"><i class='fa fa-bookmark'></i> 标签 </a><a class="menu-item" href="/categories/" title="文章分类"><i class='fa fa-th-list'></i> 分类 </a><a class="menu-item" href="/categories/logs/" title="所有日志"><i class='fa fa-coffee'></i> 日志 </a><a class="menu-item" href="/about/" title="关于博客"><i class='fa fa-heart'></i> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="LoveY Blog">LoveY<span class="header-title-post"><i class='far fa-kiss-wink-heart fa-fw'></i></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="所有文章"><i class='fa fa-book'></i>文章</a><a class="menu-item" href="/tags/" title="文章标签"><i class='fa fa-bookmark'></i>标签</a><a class="menu-item" href="/categories/" title="文章分类"><i class='fa fa-th-list'></i>分类</a><a class="menu-item" href="/categories/logs/" title="所有日志"><i class='fa fa-coffee'></i>日志</a><a class="menu-item" href="/about/" title="关于博客"><i class='fa fa-heart'></i>关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python内存管理机制</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://dllyy.xyz/about/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Dll</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>学习</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-08">2020-09-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2149 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" class="leancloud_visitors" data-flag-title="Python内存管理机制">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/featured-image.png"
+        data-srcset="/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/featured-image.png, /python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/featured-image.png 1.5x, /python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/featured-image.png"
+        title="Python具体有哪些内存管理机制……" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-垃圾回收">1 垃圾回收</a>
+      <ul>
+        <li><a href="#11-引用计数">1.1 引用计数</a></li>
+        <li><a href="#12-标记-清除">1.2 标记-清除</a></li>
+        <li><a href="#13-分代回收">1.3 分代回收</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-内存池机制">2 内存池机制</a></li>
+    <li><a href="#3-对象缓冲池机制">3 对象缓冲池机制</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>python 中万物皆对象，所以 python 的存储问题是对象的存储问题，并且对于每个对象，python 会分配一块内存空间去存储它。</p>
+<p>简单来说，python 内存管理机制总结为：</p>
+<ol>
+<li>垃圾回收</li>
+<li>内存池机制</li>
+<li>对象缓冲池机制</li>
+</ol>
+</blockquote>
+<h2 id="1-垃圾回收">1 垃圾回收</h2>
+<h3 id="11-引用计数">1.1 引用计数</h3>
+<p>引用计数是一种非常高效的内存管理手段。当一个 Python 对象被引用时，其引用计数增加 1；当其不再被一个变量引用时，则计数减 1；当引用计数等于 0 时对象被删除。</p>
+<p><strong>引用计数增加的情况：</strong></p>
+<ul>
+<li>创建一个对象，例例如:<code>a = 'carry'</code>, 引用计数 1。</li>
+<li>赋值 <code>b=a</code>, 引用计数加 1</li>
+<li>浅拷贝、函数的传参 <code>foo (x)</code> 等</li>
+<li>作为容器对象的一个元素:<code>a=[1,x,22]</code></li>
+</ul>
+<p><strong>引用计数减少的情况：</strong></p>
+<ul>
+<li>一个本地引用离开了它的作用域。比如上面 <code>foo (x)</code> 函数结束时，<code>x</code> 指向的对象引用减 1。</li>
+<li>对象的别名被显式的销毁:<code>del x</code> ; 或者 <code>del y</code></li>
+<li>对象的一个别名被赋值给其他对象:<code>x = 123</code></li>
+<li>对象从一个窗口对象中移除:<code>carry.remove (x)</code></li>
+<li>窗口对象本身被销毁:<code>del carry</code>，或者窗口对象本身离开了作用域。</li>
+</ul>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>引用计数优缺点<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>优点：</p>
+<ul>
+<li>简单、实时性：只用引用计数为 0，内存就直接释放了，不受时间限制。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>维护引用计数消耗资源</li>
+<li>容器对象出现循环引用</li>
+</ul>
+<p>出现了了<strong>循环引用</strong>怎么办 ?&ndash;&gt; <code>标记-清除、分代回收</code></p>
+<p>循环引用的例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></div>
+        </div>
+    </div>
+<h3 id="12-标记-清除">1.2 标记-清除</h3>
+<p>标记清除 <code>Mark-Sweep</code> 是针对循环引用问题的回收机制，作用的对象是<strong>容器类型</strong>的对象 (比如:<code>list、set、dict</code> 等)。</p>
+<p><strong>原理</strong>：通过根节点对象 (不会被删除的对象) ，根据引用指向方向，把所有活动对象（可遍历到的）打上标记，然后回收没有被标记的非活动对象（循环引用小团体）。</p>
+<blockquote>
+<p>『标记清除（Mark—Sweep）』算法是一种基于追踪回收（tracing GC）技术实现的垃圾回收算法。它分为两个阶段：第一阶段是标记阶段，GC 会把所有的『活动对象』打上标记，第二阶段是把那些没有标记的对象『非活动对象』进行回收。具体过程如下：</p>
+<p>对象之间通过引用（指针）连在一起，构成一个有向图，对象构成这个有向图的节点，而引用关系构成这个有向图的边。从根对象（root object）出发，沿着有向边遍历对象，可达的（reachable）对象标记为活动对象，不可达的对象就是要被清除的非活动对象。根对象就是全局变量、调用栈、寄存器。</p>
+</blockquote>
+<figure><a class="lightgallery" href="/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/index.zh-cn.assets/1604826654778.png" title="/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/index.zh-cn.assets/1604826654778.png" data-thumbnail="/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/index.zh-cn.assets/1604826654778.png" data-sub-html="<h2>标记路径图</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="index.zh-cn.assets/1604826654778.png"
+            data-srcset="/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/index.zh-cn.assets/1604826654778.png, index.zh-cn.assets/1604826654778.png 1.5x, /python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/index.zh-cn.assets/1604826654778.png 2x"
+            data-sizes="auto"
+            alt="/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/index.zh-cn.assets/1604826654778.png" />
+    </a><figcaption class="image-caption">标记路径图</figcaption>
+    </figure>
+<p>在上图中，把小黑圈作为全局变量，也就是<code>root object</code>，从小黑圈出发，对象1可直达，那么就被标记，对象2、3可间接到达，也被标记。而4和5不可达，<strong>那么1、2、3就是活动对象，4和5就是非活动对象</strong>，被GC回收。</p>
+<blockquote>
+<p>标记-清除算法作为 Python 的辅助垃圾收集技术，主要处理的是一些容器对象，因为对于字符串、数值对象是不可能造成循环引用问题。Python 使用一个双向链表将这些容器对象组织起来。不过，这种简单粗暴的标记清除算法也有明显的<strong>缺点：清除非活动的对象前它必须顺序扫描整个堆内存，哪怕只剩下小部分活动对象也要扫描所有对象。</strong></p>
+</blockquote>
+<h3 id="13-分代回收">1.3 分代回收</h3>
+<p><strong>分代回收</strong>是建立在<strong>标记清除</strong>基础上的一种辅助回收容器器对象的 GC 机制。主要原因是<strong>每次标记清除的时间成本太高</strong>。</p>
+<p>无论开发的程序类型如何，规模如何，都有这样的相同之处：一些比例的内存生存周期都很短，而另一些内存的生存周期比较长，可能会伴随着整个程序的开始和结束。</p>
+<p>所以分代回收就根据系统中内存存活时间把它们划分成不同的集合：<strong>一共分成三个集合，每个集合称为一个代</strong>。第一代未被回收就会进入第二代，同理第二代未被回收就会进入第三代，它们的垃圾收集频率随对象存活时间的增大而减小。</p>
+<p>也就是说：<strong>对于存活时间越长的对象，就越不可能是垃圾，减少对其的收集频率</strong>。而新创建的对象都在第一代，第一代集合总数达到上限后，会触发 GC 机制：可以回收的对象所占的内存被释放，不能被回收的移到下一代。</p>
+<h2 id="2-内存池机制">2 内存池机制</h2>
+<p>Python 在运行期间会大量地执行 <code>malloc</code> 和 <code>free</code> 的操作，频繁地在用户态和核心态之间进行切换，这将严重影响 Python 的执行效率。为了加速 Python 的执行效率，Python 引入了一个内存池机制，用于管理对小块内存的申请和释放。</p>
+<blockquote>
+<p>内存池是预先从内存中申请的内存块。<strong>当创建小于 256字节的对象时，从内存池申请内存空间；大于 256字节的对象从内存申请空间</strong> 。释放内存时，来自内存池空间的内存空间返回给内存池。这样做的目的是为了<strong>减少内存碎片，提升效率</strong>。</p>
+</blockquote>
+<p>如下图所示，Python 的内存机制呈现金字塔形状：</p>
+<ul>
+<li>
+<p>第 <strong><code>3</code></strong> 层是最上层，也就是我们对 Python 对象的直接操作；</p>
+</li>
+<li>
+<p>第 <strong><code>2</code></strong> 层和第 <strong><code>1</code></strong> 层是内存池，当对象小于 256K 时有该层直接分配内存；</p>
+<ul>
+<li>由 python 的接口函数 <code>Pymem_Malloc</code> 实现，若请求的内存在 <code>1~256</code> 字节之间就使用内存池管理系统进行分配。调用 malloc 函数分配内存，但是每次只会分配一个 256K 大小的内存，并且不会使用 free 函数释放，方便下次使用。</li>
+</ul>
+</li>
+<li>
+<p>第 <strong><code>0</code></strong> 层是 C 中的 malloc，free 等内存分配和释放函数进行操作；</p>
+</li>
+<li>
+<p>第<code>-1、-2</code>层主要有操作系统进行操作。</p>
+</li>
+</ul>
+<figure><a class="lightgallery" href="/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/index.zh-cn.assets/%E5%86%85%E5%AD%98%E5%9B%BE.png" title="/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/index.zh-cn.assets/%E5%86%85%E5%AD%98%E5%9B%BE.png" data-thumbnail="/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/index.zh-cn.assets/%E5%86%85%E5%AD%98%E5%9B%BE.png" data-sub-html="<h2>Python内存金字塔</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="index.zh-cn.assets/%e5%86%85%e5%ad%98%e5%9b%be.png"
+            data-srcset="/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/index.zh-cn.assets/%E5%86%85%E5%AD%98%E5%9B%BE.png, index.zh-cn.assets/%e5%86%85%e5%ad%98%e5%9b%be.png 1.5x, /python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/index.zh-cn.assets/%E5%86%85%E5%AD%98%E5%9B%BE.png 2x"
+            data-sizes="auto"
+            alt="/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/index.zh-cn.assets/%E5%86%85%E5%AD%98%E5%9B%BE.png" />
+    </a><figcaption class="image-caption">Python内存金字塔</figcaption>
+    </figure>
+<p>通过修改 Python 源代码，我们可以改变这个默认值（256K），从而改变 Python 的默认内存管理行为。</p>
+<p>调优手段（了解）</p>
+<ol>
+<li>手动垃圾回收</li>
+<li>调高垃圾回收阈值</li>
+<li>避免循环引用（手动解循环引用和使用弱引用）</li>
+</ol>
+<h2 id="3-对象缓冲池机制">3 对象缓冲池机制</h2>
+<blockquote>
+<p>对于固定范围整数和短小的字符等，python 会执行缓存机制，即将这些对象进行缓存，不会为相同的对象分配多个内存空间。</p>
+</blockquote>
+<p>例如，对于 <code>[-5,257)</code> 这样的小整数，系统已经初始化好，可以直接拿来用。</p>
+<p>虽然整数是不可变类型，但是图中<code>a、b</code>的地址明显相同。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="index.zh-cn.assets/1604901061844.png"
+        data-srcset="/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/index.zh-cn.assets/1604901061844.png, index.zh-cn.assets/1604901061844.png 1.5x, /python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/index.zh-cn.assets/1604901061844.png 2x"
+        data-sizes="auto"
+        alt="/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/index.zh-cn.assets/1604901061844.png"
+        title="整数-5的id" /></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-09-08</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://bigsmallwhite.github.io/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" data-title="Python内存管理机制" data-hashtags="Python"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://bigsmallwhite.github.io/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" data-hashtag="Python"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://bigsmallwhite.github.io/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" data-title="Python内存管理机制"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://bigsmallwhite.github.io/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" data-title="Python内存管理机制"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://bigsmallwhite.github.io/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" data-title="Python内存管理机制"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">Python</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/linux-%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C/" class="prev" rel="prev" title="linux-脚本执行命令"><i class="fas fa-angle-left fa-fw"></i>linux-脚本执行命令</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">dll</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{"valine":{"appId":"HkjwjqbvBuR9wDB5nCMVD4xL-gzGzoHsz","appKey":"Vz2O6Q0k6kQdfaulv7whvyF9","avatar":"wavatar","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论……","recordIP":true,"visitor":true}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
